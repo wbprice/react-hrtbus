@@ -4,6 +4,8 @@ class StopList extends React.Component {
   render() {
     return (
       <div><Stop /></div>
+      <div><Stop /></div>
+      <div><Stop /></div>
     )
   }
 }
