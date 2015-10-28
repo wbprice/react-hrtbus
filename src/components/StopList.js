@@ -1,11 +1,14 @@
 import React from 'react';
+import Stop from './Stop';
 
 class StopList extends React.Component {
   render() {
     return (
-      <div><Stop /></div>
-      <div><Stop /></div>
-      <div><Stop /></div>
+      <div>
+        <Stop />
+        <Stop />
+        <Stop />
+      </div>
     )
   }
 }
