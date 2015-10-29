@@ -1,6 +1,7 @@
 import React from 'react';
 import Radium from 'radium';
 import StopHeader from './StopHeader';
+import StopStatus from './StopStatus';
 
 let StopStyle = {
   base: {

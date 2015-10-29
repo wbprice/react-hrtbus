@@ -2,7 +2,7 @@ require('normalize.css');
 require('styles/App.css');
 
 import React from 'react';
-import StopList from './StopList';
+import StopList from './Stop/StopList';
 
 class AppComponent extends React.Component {
   render() {
