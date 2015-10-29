@@ -1,22 +1,25 @@
 import React from 'react';
+import Radium from 'radium';
 
 let StopStyle = {
-  backgroundColor: 'orange',
-  color: 'white'
+  base: {
+    backgroundColor: 'orange',
+    color: 'white'
+  }
 };
 
 class Stop extends React.Component {
   render() {
     return (
-      <div style={StopStyle}>
+      <div style={StopStyle.base}>
         <h1>A Stop Thing Potato</h1>
       </div>
     )
   }
-}
+};
 
 Stop.defaultProps = {
 
 };
 
-export default Stop;
+module.exports = Radium(Stop);

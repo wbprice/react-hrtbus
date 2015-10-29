@@ -1,16 +1,24 @@
 import React from 'react';
 import Stop from './Stop';
+import Radium from 'radium';
+
+let styles = {
+  base: {
+    maxWidth: '540px',
+    background: 'blue'
+  }
+};
 
 class StopList extends React.Component {
   render() {
     return (
-      <div>
+      <section style={styles.base}>
         <Stop />
         <Stop />
         <Stop />
-      </div>
+      </section>
     )
   }
 }
 
-export default StopList;
+module.exports = Radium(StopList);
