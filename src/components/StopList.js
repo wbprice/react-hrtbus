@@ -5,7 +5,8 @@ import Radium from 'radium';
 let styles = {
   base: {
     maxWidth: '540px',
-    background: 'blue'
+    background: 'blue',
+    margin: '0 auto'
   }
 };
 

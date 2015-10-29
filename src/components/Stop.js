@@ -1,5 +1,6 @@
 import React from 'react';
 import Radium from 'radium';
+import StopHeader from './StopHeader';
 
 let StopStyle = {
   base: {
@@ -11,15 +12,14 @@ let StopStyle = {
 class Stop extends React.Component {
   render() {
     return (
-      <div style={StopStyle.base}>
-        <h1>A Stop Thing Potato</h1>
-      </div>
+      <section>
+        <StopHeader />
+        <div style={StopStyle.base}>
+          <h1>A Stop Thing Potato</h1>
+        </div>
+      </section>
     )
   }
-};
-
-Stop.defaultProps = {
-
 };
 
 module.exports = Radium(Stop);
