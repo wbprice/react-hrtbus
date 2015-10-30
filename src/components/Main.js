@@ -2,19 +2,27 @@ require('normalize.css');
 require('styles/App.css');
 
 import React from 'react';
+import { Router, Route, Link } from 'react-router'
+
 import StopList from './Stop/StopList';
+import Stop from './Stop/Stop';
 
 class AppComponent extends React.Component {
   render() {
     return (
-      <div className="index">
-        <StopList />
-      </div>
-    );
+      <Router>
+        <Route path="/" component={StopList}>
+          <Route path="stop" component={StopList}>
+            <Route path="/:id" component={Stop} />
+          </Route>
+        </Route>
+      </Router>
+    )
   }
 }
 
 AppComponent.defaultProps = {
+
 };
 
 export default AppComponent;
