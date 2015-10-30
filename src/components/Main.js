@@ -13,7 +13,7 @@ class AppComponent extends React.Component {
       <Router>
         <Route path="/" component={StopList}>
           <Route path="stop" component={StopList}>
-            <Route path="/:id" component={Stop} />
+            <Route path=":stopid" component={Stop} />
           </Route>
         </Route>
       </Router>
