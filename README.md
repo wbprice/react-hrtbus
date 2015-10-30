@@ -1,5 +1,5 @@
 # HRTb.us 
-A [React](https://facebook.github.io/react/index.html) implementation of [HRTb.us](http://hrtb.us).  ### Setup Instructions
+A [React](https://facebook.github.io/react/index.html) implementation of [HRTb.us](http://hrtb.us).
 ## Setup Instructions
 2. Install dependencies 
 ```sh
