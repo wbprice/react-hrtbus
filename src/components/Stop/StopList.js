@@ -6,7 +6,7 @@ class StopList extends React.Component {
   render() {
     return (
       <section>
-        <pre>StopList</pre>
+        <pre>StopList</pre
         <Stop />
         <Stop />
         <Stop />

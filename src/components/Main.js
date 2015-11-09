@@ -1,5 +1,6 @@
 require('normalize.css');
 require('styles/App.css');
+require('styles/Flexbox.css');
 
 import React from 'react';
 import { Router, Route, Link } from 'react-router'
