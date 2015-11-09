@@ -1,25 +1,18 @@
-import React from 'react';
-import Stop from './Stop';
-import Radium from 'radium';
-
-let styles = {
-  base: {
-    maxWidth: '540px',
-    background: 'blue',
-    margin: '0 auto'
-  }
-};
+import React from 'react'
+import Radium from 'radium'
+import Stop from './Stop'
 
 class StopList extends React.Component {
   render() {
     return (
-      <section style={styles.base}>
+      <section>
+        <pre>StopList</pre>
         <Stop />
         <Stop />
         <Stop />
       </section>
     )
   }
-}
+};
 
-module.exports = Radium(StopList);
+export default StopList
