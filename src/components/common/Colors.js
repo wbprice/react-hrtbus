@@ -22,6 +22,9 @@ let colors = {
     light: '#F2E7D9',
     base: '#EEDFCC',
     dark: '#E3D5C2'
+  },
+  white: {
+    base: '#ffffff'
   }
 };
 

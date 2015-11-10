@@ -11,22 +11,35 @@ import Home from './Home/Home'
 import Feedback from './Feedback/Feedback'
 import Instructions from './Instructions/Instructions'
 import StyleGuide from './StyleGuide/StyleGuide'
+import Header from './Header/Header.js'
+
+let body = {
+  marginTop: '3.25rem'
+}
 
 class AppComponent extends React.Component {
   render() {
     return (
-      <Router>
-        <Route path="/" component={Home} />
-        <Route path="/stop" component={StopList}>
-          <Route path=":stopid" component={StopList} />
-        </Route>
-        <Route path="/route" component={RouteList}>
-          <Route path=":routeid" component={RouteList} />
-        </Route>
-        <Route path="/feedback" component={Feedback} />
-        <Route path="/instructions" component={Instructions} />
-        <Route path="/styleguide" component={StyleGuide} />
-      </Router>
+      <section>
+
+        <Header />
+
+        <section style={body}>
+          <Router>
+            <Route path="/" component={Home} />
+            <Route path="/stop" component={StopList}>
+              <Route path=":stopid" component={StopList} />
+            </Route>
+            <Route path="/route" component={RouteList}>
+              <Route path=":routeid" component={RouteList} />
+            </Route>
+            <Route path="/feedback" component={Feedback} />
+            <Route path="/instructions" component={Instructions} />
+            <Route path="/styleguide" component={StyleGuide} />
+          </Router>
+        </section>
+
+      </section>
     )
   }
 }
