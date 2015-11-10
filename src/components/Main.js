@@ -1,5 +1,6 @@
 require('normalize.css');
 require('styles/App.css');
+require('flexboxgrid');
 
 import React from 'react';
 import { Router, Route, Link } from 'react-router'
@@ -9,6 +10,7 @@ import RouteList from './Route/RouteList'
 import Home from './Home/Home'
 import Feedback from './Feedback/Feedback'
 import Instructions from './Instructions/Instructions'
+import StyleGuide from './StyleGuide/StyleGuide'
 
 class AppComponent extends React.Component {
   render() {
@@ -23,13 +25,12 @@ class AppComponent extends React.Component {
         </Route>
         <Route path="/feedback" component={Feedback} />
         <Route path="/instructions" component={Instructions} />
+        <Route path="/styleguide" component={StyleGuide} />
       </Router>
     )
   }
 }
 
-AppComponent.defaultProps = {
-
-};
+AppComponent.defaultProps = {};
 
 export default AppComponent;
