@@ -16,7 +16,7 @@ let colors = {
     base: '#E0CC47'
   },
   green: {
-    base: '#E0CC47'
+    base: '#84BA71'
   },
   beige: {
     light: '#F2E7D9',
