@@ -1,6 +1,8 @@
 import React from 'react'
 import Radium from 'radium'
 
+import Card from './Card'
+
 class StyleGuide extends React.Component {
   render() {
     return (
@@ -60,17 +62,24 @@ class StyleGuide extends React.Component {
           <section className="row middle-xs">
 
             <div className="col-xs">
-              <section className="card shadow">
+              <Card shadow>
                 <h2>Card Title</h2>
-                <p>This is a lengthy description of a thing that this card is doing. This card has a shadow.</p>
-              </section>
+                <p>A composited card.</p>
+              </Card>
             </div>
 
             <div className="col-xs">
-              <section className="card">
+              <Card shadow>
+                <h2>A Card With Shadow</h2>
+                <p>This card has a shadow!</p>
+              </Card>
+            </div>
+
+            <div className="col-xs">
+              <Card>
                 <h2>Card Title</h2>
                 <p>This card doesn&rsquo;t have a shadow.</p>
-              </section>
+              </Card>
             </div>
 
           </section>
