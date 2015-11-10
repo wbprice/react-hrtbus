@@ -2,9 +2,13 @@ import React from 'react'
 import Radium from 'radium'
 
 import Card from './Card'
+import colors from './Colors'
 
 class StyleGuide extends React.Component {
   render() {
+
+    console.log(colors);
+
     return (
       <article className="container">
 
