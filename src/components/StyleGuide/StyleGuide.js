@@ -54,9 +54,10 @@ class StyleGuide extends React.Component {
           <p>A responsive card element.</p>
 
           <pre>
-            padding: 1em;<br/>
-            background: white;<br/>
-            margin-bottom: 1em;
+            &lt;Card Title&gt;<br/>
+            &emsp;&emsp;&lt;h2&gt;Card Contents Here&lt;/h2&gt;<br/>
+            &emsp;&emsp;&lt;p&gt;A composited card!&lt;p&gt;<br/>
+            &lt;/Card&gt;
           </pre>
 
           <section className="row middle-xs">
