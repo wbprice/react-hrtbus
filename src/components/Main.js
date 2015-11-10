@@ -1,6 +1,6 @@
 require('normalize.css');
 require('styles/App.css');
-require('styles/Flexbox.css');
+require('flexboxgrid');
 
 import React from 'react';
 import { Router, Route, Link } from 'react-router'
@@ -31,8 +31,6 @@ class AppComponent extends React.Component {
   }
 }
 
-AppComponent.defaultProps = {
-
-};
+AppComponent.defaultProps = {};
 
 export default AppComponent;

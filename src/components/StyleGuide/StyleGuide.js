@@ -57,19 +57,26 @@ class StyleGuide extends React.Component {
             margin-bottom: 1em;
           </pre>
 
-          <section className="card shadow">
-            <h2>Card Title</h2>
-            <p>This is a lengthy description of a thing that this card is doing. This card has a shadow.</p>
-          </section>
+          <section className="row middle-xs">
 
-          <section className="card">
-            <h2>Card Title</h2>
-            <p>This card doesn&rsquo;t have a shadow.</p>
+            <div className="col-xs">
+              <section className="card shadow">
+                <h2>Card Title</h2>
+                <p>This is a lengthy description of a thing that this card is doing. This card has a shadow.</p>
+              </section>
+            </div>
+
+            <div className="col-xs">
+              <section className="card">
+                <h2>Card Title</h2>
+                <p>This card doesn&rsquo;t have a shadow.</p>
+              </section>
+            </div>
+
           </section>
 
           <h3>Callout</h3>
           <p>A callout for a visual element</p>
-          
 
         </section>
 
