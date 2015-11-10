@@ -3,11 +3,10 @@ import Radium from 'radium'
 
 import Card from './Card'
 import colors from './Colors'
+import Badge from '../common/Badge'
 
 class StyleGuide extends React.Component {
   render() {
-
-    console.log(colors);
 
     return (
       <article className="container">
@@ -45,6 +44,10 @@ class StyleGuide extends React.Component {
           <header>
             <h2>Colors</h2>
           </header>
+
+          <Badge>
+            23
+          </Badge>
 
         </section>
 
