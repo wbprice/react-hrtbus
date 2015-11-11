@@ -2,6 +2,7 @@ import React from 'react'
 import Radium from 'radium'
 import Colors from '../common/Colors'
 import Icon from '../common/Icon'
+import { Router, Route, Link } from 'react-router'
 
 let style = {
   base: {
@@ -23,13 +24,26 @@ let style = {
 
   container: {
     display: 'flex',
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
   },
 
   heading: {
     fontSize: '1.5em',
-    display: 'flex'
+    flex: 1
+  },
+
+  ul: {
+    display: 'flex',
+    flexDirection: 'row',
+    listStyleType: 'none',
+    paddingLeft: 0,
+    margin: 0
+  },
+
+  li: {
+    padding: '0 0.5em'
   }
 
 }
@@ -43,6 +57,10 @@ class Header extends React.Component {
             <Icon source="/images/logo-white" height="36" width="36"/>
           </div>
           <h1 style={style.heading}>HRTb.us</h1>
+          <ul style={style.ul}>
+            <li style={style.li}><Link to="/stop">Stop</Link></li>
+            <li style={style.li}><Link to="/route">Route</Link></li>
+          </ul>
         </div>
       </header>
     )

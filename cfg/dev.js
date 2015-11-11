@@ -22,9 +22,6 @@ var config = _.merge({
 config.module.loaders.push({
   test: /\.(js|jsx)$/,
   loader: 'react-hot!babel-loader',
-  query: {
-    presets: ['stage-0']
-  },
   include: path.join(__dirname, '/../src')
 });
 
