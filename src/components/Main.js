@@ -1,6 +1,7 @@
 require('normalize.css');
 require('styles/App.css');
 require('flexboxgrid');
+require('purecss/build/pure-min.css');
 
 import React from 'react';
 import { Router, Route, Link } from 'react-router'
