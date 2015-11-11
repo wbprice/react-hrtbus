@@ -5,45 +5,30 @@ import Icon from '../common/Icon'
 import { Router, Route, Link } from 'react-router'
 
 let style = {
-  base: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    background: Colors.blue.dark,
-    color: Colors.white.base,
+
+  header: {
     height: '3.25rem',
+    background: Colors.blue.dark,
     position: 'fixed',
-    top: 0,
-    left: 0,
+    top: '0',
+    left: '0',
     width: '100%'
   },
 
-  icon: {
-    marginRight: '.5em'
-  },
-
-  container: {
+  horizontal: {
     display: 'flex',
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'center'
   },
 
-  heading: {
-    fontSize: '1.5em',
-    flex: 1
+  menu: {
+    margin: 0,
+    padding: 0,
+    listStyleType: 'none'
   },
 
-  ul: {
-    display: 'flex',
-    flexDirection: 'row',
-    listStyleType: 'none',
-    paddingLeft: 0,
-    margin: 0
-  },
-
-  li: {
-    padding: '0 0.5em'
+  menuItem: {
+    lineHeight: '3.25rem',
+    padding: '0 1em'
   }
 
 }
@@ -51,16 +36,25 @@ let style = {
 class Header extends React.Component {
   render() {
     return (
-      <header style={style.base}>
-        <div className="container" style={style.container}>
-          <div style={style.icon}>
+      <header style={style.header}>
+        <div className="container" style={style.horizontal}>
+
+          <Link to="/">
             <Icon source="/images/logo-white" height="36" width="36"/>
-          </div>
-          <h1 style={style.heading}>HRTb.us</h1>
-          <ul style={style.ul}>
-            <li style={style.li}><Link to="/stop">Stop</Link></li>
-            <li style={style.li}><Link to="/route">Route</Link></li>
+          </Link>
+          <Link to="/">
+            <h1>HRTb.us</h1>
+          </Link>
+
+          <ul style={[style.horizontal, style.menu]}>
+            <li>
+              <Link style={style.menuItem} to="/stop">Stop</Link>
+            </li>
+            <li>
+              <Link style={style.menuItem} to="/route">Route</Link>
+            </li>
           </ul>
+
         </div>
       </header>
     )
