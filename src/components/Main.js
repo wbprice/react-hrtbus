@@ -14,7 +14,8 @@ import StyleGuide from './StyleGuide/StyleGuide'
 import Header from './Header/Header.js'
 
 let body = {
-  marginTop: '3.25rem'
+  marginTop: '3.25rem',
+  paddingTop: '1rem'
 }
 
 class AppComponent extends React.Component {
