@@ -1,17 +1,15 @@
-import React from 'react';
-import Radium from 'radium';
+import React from 'react'
+import Radium from 'radium'
 
 class Icon extends React.Component {
   render() {
 
-    let height = this.props.height || 48,
-        width = this.props.width || 48,
+    let height = this.props.height || '48px',
+        width = this.props.width || '48px',
         source = this.props.source
 
     return (
-      <svg width={width} height={height}>
-        <image xlink:href={`${source}.svg`} src={`${source}.png`} width={width} height={height} />
-      </svg>
+      <img src={`${source}.png`} width={width} height={height} />
     );
   }
 }

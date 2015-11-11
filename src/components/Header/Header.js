@@ -1,8 +1,9 @@
 import React from 'react'
 import Radium from 'radium'
 import Colors from '../common/Colors'
+import Icon from '../common/Icon'
 
-let headerStyles = {
+let style = {
   base: {
     display: 'flex',
     flexDirection: 'row',
@@ -16,6 +17,16 @@ let headerStyles = {
     width: '100%'
   },
 
+  icon: {
+    marginRight: '.5em'
+  },
+
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+
   heading: {
     fontSize: '1.5em',
     display: 'flex'
@@ -26,9 +37,12 @@ let headerStyles = {
 class Header extends React.Component {
   render() {
     return (
-      <header style={headerStyles.base}>
-        <div className="container">
-          <h1 style={headerStyles.heading}>HRTb.us</h1>
+      <header style={style.base}>
+        <div className="container" style={style.container}>
+          <div style={style.icon}>
+            <Icon source="/images/logo-white" height="36" width="36"/>
+          </div>
+          <h1 style={style.heading}>HRTb.us</h1>
         </div>
       </header>
     )
