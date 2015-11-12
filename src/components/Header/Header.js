@@ -1,3 +1,5 @@
+require('./app-header.css');
+
 import React from 'react'
 import Radium from 'radium'
 import Colors from '../common/Colors'
@@ -7,28 +9,13 @@ import { Router, Route, Link } from 'react-router'
 let style = {
 
   header: {
+    background: Colors.blue.dark
+  },
+
+  activeLink: {
+    background: Colors.blue.base,
     height: '3.25rem',
-    background: Colors.blue.dark,
-    position: 'fixed',
-    top: '0',
-    left: '0',
-    width: '100%'
-  },
-
-  horizontal: {
-    display: 'flex',
-    alignItems: 'center'
-  },
-
-  menu: {
-    margin: 0,
-    padding: 0,
-    listStyleType: 'none'
-  },
-
-  menuItem: {
-    lineHeight: '3.25rem',
-    padding: '0 1em'
+    boxShadow: `inset 0 -.25rem #ffffff`
   }
 
 }
@@ -36,22 +23,22 @@ let style = {
 class Header extends React.Component {
   render() {
     return (
-      <header style={style.header}>
-        <div className="container" style={style.horizontal}>
+      <header className="app-header" style={style.header}>
+        <div className="container app-header--container">
 
-          <Link to="/">
+          <Link className="app-header--logo" to="/">
             <Icon source="/images/logo-white" height="36" width="36"/>
           </Link>
-          <Link to="/">
+          <Link className="app-header--heading" to="/">
             <h1>HRTb.us</h1>
           </Link>
 
-          <ul style={[style.horizontal, style.menu]}>
+          <ul className="app-header--menu">
             <li>
-              <Link style={style.menuItem} to="/stop">Stop</Link>
+              <Link to="/stop" activeStyle={style.activeLink}>Stop</Link>
             </li>
             <li>
-              <Link style={style.menuItem} to="/route">Route</Link>
+              <Link to="/route" activeStyle={style.activeLink}>Route</Link>
             </li>
           </ul>
 
