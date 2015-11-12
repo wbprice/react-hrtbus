@@ -1,7 +1,7 @@
-# HRTb.us 
+# HRTb.us
 A [React](https://facebook.github.io/react/index.html) implementation of [HRTb.us](http://hrtb.us).
 ## Setup Instructions
-2. Install dependencies 
+2. Install dependencies
 ```sh
 $ npm install
 ```
@@ -11,7 +11,7 @@ $ npm start
 ```
 4. A browser should open automatically.  If not, navigate the following address in your browser of choice.
 ```
-http://localhost:8000/webpack-dev-server/
+http://localhost:8000/
 ```
 
 
