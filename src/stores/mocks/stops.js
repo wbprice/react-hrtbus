@@ -1,4 +1,4 @@
-const response = [
+export default [
   {
     "stop_name": "HAMPTON & PRINCESS ANNE",
     "stop_id": "0209",
@@ -65,5 +65,3 @@ const response = [
     ]
   }
 ]
-
-export default response;
