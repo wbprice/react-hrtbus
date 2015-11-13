@@ -31,15 +31,15 @@ const style = {
 
   key: {
     background: Colors.blue.base,
-    color: 'white',
+    color: 'white'
+  },
 
-    cell: {
-      fontWeight: 'normal',
-      fontSize: '.875em',
-      padding: '.25rem 0'
-    }
-
+  cell: {
+    fontWeight: 'normal',
+    fontSize: '.875em',
+    padding: '.25rem 0'
   }
+
 }
 
 class Stop extends React.Component {
@@ -65,9 +65,9 @@ class Stop extends React.Component {
 
           <thead>
             <tr style={style.key}>
-              <th style={style.key.cell}>Route</th>
-              <th style={[style.key.cell, style.destination]}>Destination</th>
-              <th style={style.key.cell}>Arriving</th>
+              <th style={style.cell}>Route</th>
+              <th style={[style.cell, style.destination]}>Destination</th>
+              <th style={style.cell}>Arriving</th>
             </tr>
           </thead>
 
