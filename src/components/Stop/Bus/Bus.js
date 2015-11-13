@@ -19,7 +19,6 @@ let style = {
 }
 
 function alternateColor(index) {
-  console.log(index);
   if (index % 2 !== 0) {
     return { background: Colors.beige.light }
   } else {
