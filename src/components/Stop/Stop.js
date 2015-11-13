@@ -6,7 +6,7 @@ import Bus from './Bus/Bus'
 const style = {
 
   base: {
-    marginBottom: '1em'
+    marginBottom: '1.5em'
   },
 
   header: {
@@ -20,7 +20,8 @@ const style = {
 
   inactive: {
     background: 'transparent',
-    color: 'inherit'
+    color: 'inherit',
+    padding: '0.25em'
   },
 
   table: {
@@ -63,8 +64,14 @@ class StopKey extends React.Component {
 
 class NoBuses extends React.Component {
   render() {
+
+    let style = {
+      textAlign: 'center',
+      margin: '0'
+    }
+
     return (
-      <span>No Buses Scheduled</span>
+      <p style={style}>No Buses Scheduled</p>
     )
   }
 }
@@ -83,16 +90,6 @@ class Stop extends React.Component {
 
   render() {
 
-    let component = (function() {
-      console.log('this?');
-      console.log(this);
-      if (this.props.stop.buses.length === 0) {
-        return <NoBuses />
-      } else {
-        return <StopKey />
-      }
-    }.bind(this)())
-
     return (
       <section style={style.base}>
 
@@ -104,24 +101,34 @@ class Stop extends React.Component {
           <span>{this.props.stop.stop_id}</span>
         </header>
 
-        <table style={style.table}>
+        {(() => {
 
-          {component}
+          if (this.props.stop.buses.length === 0) {
 
-          <tbody>
-            {
-              this.props.stop.buses.map(function(bus, index) {
-                return (
-                  <Bus
-                    key={bus.bus_number}
-                    index={index}
-                    bus={bus}/>
-                );
-              })
-            }
-          </tbody>
+            return <NoBuses />
 
-        </table>
+          } else {
+
+            return (
+              <table style={style.table}>
+                <StopKey />
+                <tbody>
+                  {
+                    this.props.stop.buses.map(function(bus, index) {
+                      return (
+                        <Bus
+                          key={bus.bus_number}
+                          index={index}
+                          bus={bus}/>
+                      )
+                    })
+                  }
+                </tbody>
+              </table>
+            )
+
+          }
+        }())}
 
       </section>
     )
