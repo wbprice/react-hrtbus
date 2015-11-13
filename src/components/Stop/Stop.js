@@ -18,6 +18,11 @@ const style = {
     color: 'white'
   },
 
+  inactive: {
+    background: 'transparent',
+    color: 'inherit'
+  },
+
   table: {
     width: '100%'
   },
@@ -42,6 +47,30 @@ const style = {
 
 }
 
+class StopKey extends React.Component {
+  render() {
+    return (
+      <thead>
+        <tr style={style.key}>
+          <th style={style.cell}>Route</th>
+          <th style={[style.cell, style.destination]}>Destination</th>
+          <th style={style.cell}>Arriving</th>
+        </tr>
+      </thead>
+    )
+  }
+}
+
+class NoBuses extends React.Component {
+  render() {
+    return (
+      <span>No Buses Scheduled</span>
+    )
+  }
+}
+
+StopKey = Radium(StopKey)
+
 class Stop extends React.Component {
 
   constructor() {
@@ -53,23 +82,31 @@ class Stop extends React.Component {
   componentWillUnmount() {}
 
   render() {
+
+    let component = (function() {
+      console.log('this?');
+      console.log(this);
+      if (this.props.stop.buses.length === 0) {
+        return <NoBuses />
+      } else {
+        return <StopKey />
+      }
+    }.bind(this)())
+
     return (
       <section style={style.base}>
 
-        <header style={style.header}>
+        <header style={[
+            style.header,
+            this.props.stop.buses.length === 0 && style.inactive
+          ]}>
           <h3>{this.props.stop.stop_name}</h3>
           <span>{this.props.stop.stop_id}</span>
         </header>
 
         <table style={style.table}>
 
-          <thead>
-            <tr style={style.key}>
-              <th style={style.cell}>Route</th>
-              <th style={[style.cell, style.destination]}>Destination</th>
-              <th style={style.cell}>Arriving</th>
-            </tr>
-          </thead>
+          {component}
 
           <tbody>
             {
