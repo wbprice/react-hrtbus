@@ -4,6 +4,11 @@ import Colors from '../common/Colors'
 import Bus from './Bus/Bus'
 
 const style = {
+
+  base: {
+    marginBottom: '1em'
+  },
+
   header: {
     background: Colors.blue.dark,
     padding: '1em',
@@ -49,7 +54,7 @@ class Stop extends React.Component {
 
   render() {
     return (
-      <section>
+      <section style={style.base}>
 
         <header style={style.header}>
           <h3>{this.props.stop.stop_name}</h3>

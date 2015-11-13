@@ -21,7 +21,7 @@ class App extends React.Component {
   render() {
 
     let body = {
-      marginTop: '5.0em',
+      marginTop: '3.25em',
       paddingTop: '1em'
     }
 
