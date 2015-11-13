@@ -31,8 +31,9 @@ class StopList extends React.Component {
   render() {
     return (
       <section>
-        <pre>StopList</pre>
-        <pre>{JSON.stringify(this.state, null, 2)}</pre>
+        {this.state.stops.map(function(stop) {
+          return <Stop key={stop.stop_id} stop={stop}/>
+        })}
       </section>
     )
   }
