@@ -6,7 +6,7 @@ import Bus from './Bus/Bus'
 const style = {
 
   base: {
-    marginBottom: '1em'
+    marginBottom: '1.5em'
   },
 
   header: {
@@ -16,6 +16,12 @@ const style = {
     flexDirection: 'column',
     alignItems: 'center',
     color: 'white'
+  },
+
+  inactive: {
+    background: 'transparent',
+    color: 'inherit',
+    padding: '0.25em'
   },
 
   table: {
@@ -42,6 +48,36 @@ const style = {
 
 }
 
+class StopKey extends React.Component {
+  render() {
+    return (
+      <thead>
+        <tr style={style.key}>
+          <th style={style.cell}>Route</th>
+          <th style={[style.cell, style.destination]}>Destination</th>
+          <th style={style.cell}>Arriving</th>
+        </tr>
+      </thead>
+    )
+  }
+}
+
+class NoBuses extends React.Component {
+  render() {
+
+    let style = {
+      textAlign: 'center',
+      margin: '0'
+    }
+
+    return (
+      <p style={style}>No Buses Scheduled</p>
+    )
+  }
+}
+
+StopKey = Radium(StopKey)
+
 class Stop extends React.Component {
 
   constructor() {
@@ -53,38 +89,46 @@ class Stop extends React.Component {
   componentWillUnmount() {}
 
   render() {
+
     return (
       <section style={style.base}>
 
-        <header style={style.header}>
+        <header style={[
+            style.header,
+            this.props.stop.buses.length === 0 && style.inactive
+          ]}>
           <h3>{this.props.stop.stop_name}</h3>
           <span>{this.props.stop.stop_id}</span>
         </header>
 
-        <table style={style.table}>
+        {(() => {
 
-          <thead>
-            <tr style={style.key}>
-              <th style={style.cell}>Route</th>
-              <th style={[style.cell, style.destination]}>Destination</th>
-              <th style={style.cell}>Arriving</th>
-            </tr>
-          </thead>
+          if (this.props.stop.buses.length === 0) {
 
-          <tbody>
-            {
-              this.props.stop.buses.map(function(bus, index) {
-                return (
-                  <Bus
-                    key={bus.bus_number}
-                    index={index}
-                    bus={bus}/>
-                );
-              })
-            }
-          </tbody>
+            return <NoBuses />
 
-        </table>
+          } else {
+
+            return (
+              <table style={style.table}>
+                <StopKey />
+                <tbody>
+                  {
+                    this.props.stop.buses.map(function(bus, index) {
+                      return (
+                        <Bus
+                          key={bus.bus_number}
+                          index={index}
+                          bus={bus}/>
+                      )
+                    })
+                  }
+                </tbody>
+              </table>
+            )
+
+          }
+        }())}
 
       </section>
     )
