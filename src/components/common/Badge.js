@@ -4,7 +4,7 @@ import Colors from './Colors'
 
 let container = {
     height: '3rem',
-    width: '4rem',
+    minWidth: '4rem',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
