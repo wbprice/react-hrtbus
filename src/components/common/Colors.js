@@ -4,7 +4,7 @@ import Radium from 'radium'
 let colors = {
   blue: {
     base: '#A7BFCC',
-    dark: '#82A6BA'
+    dark: '#7298AD'
   },
   red: {
     base: '#DB5051'
