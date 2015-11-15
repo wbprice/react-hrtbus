@@ -43,7 +43,6 @@ AppDispatcher.register(function(action) {
 
   stopStore.emitChange()
 
-
 })
 
 export default stopStore
