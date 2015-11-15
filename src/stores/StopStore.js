@@ -5,7 +5,7 @@ import stops from './mocks/stops'
 
 const CHANGE_EVENT = 'change'
 
-var seconds = 0;
+var jsonData = 0;
 
 class StopStore extends EventEmitter {
 
@@ -37,8 +37,8 @@ const stopStore = new StopStore()
 AppDispatcher.register(function(action) {
 
   if (action.action.actionType == AppConstants.PULL_DATA) {
-    seconds++;
-    console.log('stored second ' + seconds);
+    jsonData = action.action.stopData;
+    console.log('New Json = ' + jsonData);
   } 
 
   stopStore.emitChange()

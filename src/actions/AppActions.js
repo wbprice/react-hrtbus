@@ -3,8 +3,12 @@ import AppConstants from '../constants/AppConstants'
 
 var AppActions = {
   pullStopData(){
+    
+      var randomJson = Math.random() * 1000000;
+
   		AppDispatcher.handlePullStopData({
-  	    	actionType:AppConstants.PULL_DATA
+  	    	actionType:AppConstants.PULL_DATA,
+          stopData: randomJson
       })
   }
 }
