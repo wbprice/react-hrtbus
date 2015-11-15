@@ -1,8 +1,11 @@
 import AppDispatcher from '../dispatcher/AppDispatcher'
+import AppConstants from '../constants/AppConstants'
 import EventEmitter from 'events'
 import stops from './mocks/stops'
 
 const CHANGE_EVENT = 'change'
+
+var seconds = 0;
 
 class StopStore extends EventEmitter {
 
@@ -20,7 +23,7 @@ class StopStore extends EventEmitter {
   }
 
   removeChangeListener(callback) {
-    this.on(CHANGE_EVENT, callback)
+    this.removeListener(CHANGE_EVENT, callback)
   }
 
   get() {
@@ -33,7 +36,13 @@ const stopStore = new StopStore()
 
 AppDispatcher.register(function(action) {
 
+  if (action.action.actionType == AppConstants.PULL_DATA) {
+    seconds++;
+    console.log('stored second ' + seconds);
+  } 
+
   stopStore.emitChange()
+
 
 })
 
