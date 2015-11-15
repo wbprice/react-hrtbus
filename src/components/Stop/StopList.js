@@ -20,11 +20,11 @@ class StopList extends React.Component {
 
   componentDidMount() {
     StopStore.addChangeListener(this._onChange)
-    this.checker();
-    this.interval = setInterval(this.checker, 2000);
+    this.startAPInGeo();
+    this.interval = setInterval(this.startAPInGeo, 2000);
   }
 
-  checker() {
+  startAPInGeo() {
     AppActions.pullStopData();
   }
 
