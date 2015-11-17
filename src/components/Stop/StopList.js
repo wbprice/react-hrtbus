@@ -2,6 +2,7 @@ import React from 'react'
 import Radium from 'radium'
 import Stop from './Stop'
 import StopStore from '../../stores/StopStore'
+import AppActions from '../../actions/AppActions'
 
 function getStops() {
   return {
@@ -13,18 +14,27 @@ class StopList extends React.Component {
 
   constructor() {
     super()
-    this.state = getStops()
+    this.state = getStops()    
+    this._onChange = this._onChange.bind(this);
   }
 
   componentDidMount() {
     StopStore.addChangeListener(this._onChange)
+    this.startAPInGeo();
+    this.interval = setInterval(this.startAPInGeo, 2000);
+  }
+
+  startAPInGeo() {
+    AppActions.pullStopData();
   }
 
   componentWillUnmount() {
+    clearInterval(this.interval);
     StopStore.removeChangeListener(this._onChange)
   }
 
   _onChange() {
+    console.log('settingstate');
     this.setState(getStops());
   }
 

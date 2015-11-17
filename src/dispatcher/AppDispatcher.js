@@ -1,3 +1,12 @@
-var Dispatcher = require('flux').Dispatcher;
+import {Dispatcher} from 'flux';
+import assign from 'object-assign';
 
-module.exports = new Dispatcher();
+var AppDispatcher = assign(new Dispatcher(), {
+  handlePullStopData(action) {
+  	this.dispatch({
+  		action: action
+  	});
+  }
+});
+
+module.exports = AppDispatcher;
