@@ -6,7 +6,7 @@ import AppActions from '../../actions/AppActions'
 
 function getStops() {
   return {
-    stops: StopStore.get()
+    stopListData: StopStore.get()
   }
 }
 
@@ -14,18 +14,26 @@ class StopList extends React.Component {
 
   constructor() {
     super()
-    this.state = getStops()    
+    this.state = getStops()
     this._onChange = this._onChange.bind(this);
+    this.startAPI = this.startAPI.bind(this);
   }
 
   componentDidMount() {
     StopStore.addChangeListener(this._onChange)
-    this.startAPInGeo();
-    this.interval = setInterval(this.startAPInGeo, 2000);
+    this.startGeoData();
+    this.interval = setInterval(this.startAPI, 10000);
   }
 
-  startAPInGeo() {
-    AppActions.pullStopData();
+  //only if location data has been loaded, resend API request
+  startAPI() {
+    if (this.state.stopListData.locationCoords) {
+      AppActions.pullStopData(this.state.stopListData.locationCoords);
+    }
+  }
+
+  startGeoData() {
+    AppActions.geoCheck();
   }
 
   componentWillUnmount() {
@@ -39,9 +47,17 @@ class StopList extends React.Component {
   }
 
   render() {
+
+    if (!this.state.stopListData.locationCoords) {
+      //probably needs better CSS
+      return (<div><center><img src="../../images/466.gif" /></center></div>)
+    } else {
+      console.log("Latitude = " + this.state.stopListData.locationCoords.coords.latitude);
+      console.log("Longitude = " + this.state.stopListData.locationCoords.coords.longitude);
+    }
     return (
-      <section>
-        {this.state.stops.map(function(stop) {
+      <section>   
+        {this.state.stopListData.stops.map(function(stop) {
           return <Stop key={stop.stop_id} stop={stop}/>
         })}
       </section>

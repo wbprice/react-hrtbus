@@ -8,11 +8,14 @@ const CHANGE_EVENT = 'change'
 //remove this
 var jsonData = 0;
 
+//keep this, will hold all location and stopData
+var stopListData = {};
+
 class StopStore extends EventEmitter {
 
   constructor() {
     super()
-    this.stops = stops
+    stopListData.stops = stops // <--- remove
   }
 
   emitChange() {
@@ -28,7 +31,7 @@ class StopStore extends EventEmitter {
   }
 
   get() {
-    return this.stops;
+    return stopListData;
   }
 
 }
@@ -37,17 +40,11 @@ const stopStore = new StopStore()
 
 AppDispatcher.register(function(action) {
 
-
-  //Instead of just modifying the jsonData variable,
-  //it will modify the stops variable and automatically
-  //go through the changelistener and rerender the DOM
-  // so...  
-  // jsonData = action.action.stopData  would be (line 48)
-  // stops = action.action.stopData
   if (action.action.actionType == AppConstants.PULL_DATA) {
-    jsonData = action.action.stopData;
-    console.log('New Json = ' + jsonData);
-  } 
+    console.log("Received new stopData = " + action.action.stopData);
+    //stopListData = action.action.stopData;  <---uncomment when API is implemented
+    stopListData.locationCoords = action.action.geoData;
+  }
 
   stopStore.emitChange()
 
