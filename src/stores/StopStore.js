@@ -42,7 +42,7 @@ AppDispatcher.register(function(action) {
 
   if (action.action.actionType == AppConstants.PULL_DATA) {
     console.log("Received new stopData = " + action.action.stopData);
-    //stopListData = action.action.stopData;  <---uncomment when API is implemented
+    //stopListData.stops = action.action.stopData;  <---uncomment when API is implemented
     stopListData.locationCoords = action.action.geoData;
   }
 

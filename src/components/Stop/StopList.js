@@ -50,6 +50,7 @@ class StopList extends React.Component {
 
     if (!this.state.stopListData.locationCoords) {
       //probably needs better CSS
+      //return only loading gif until data's been set
       return (<div><center><img src="../../images/466.gif" /></center></div>)
     } else {
       console.log("Latitude = " + this.state.stopListData.locationCoords.coords.latitude);
