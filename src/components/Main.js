@@ -3,10 +3,19 @@ require('flexboxgrid');
 require('purecss/build/pure-min.css');
 require('../styles/App.css');
 
-import React from 'react';
-import { Router, Route, Link } from 'react-router'
+import React from 'react'
+import { createStore, compose, combineReducers, applyMiddleware } from 'redux'
+import { Route, Redirect, IndexRoute } from 'react-router'
 import { createHistory } from 'history'
+import { Provider } from 'react-redux'
+import createLogger from 'redux-logger'
+import thunk from 'redux-thunk'
 
+const ReduxRouter = require('redux-router').ReduxRouter
+const routerStateReducer = require('redux-router').routerStateReducer
+const reduxReactRouter = require('redux-router').reduxReactRouter
+
+// Components
 import Header from './Header/Header'
 import StopList from './Stop/StopList'
 import Stop from './Stop/Stop'
@@ -15,7 +24,18 @@ import SingleRoute from './Route/Route'
 import StyleGuide from './StyleGuide/StyleGuide'
 import Instructions from './Instructions/Instructions'
 
-const history = createHistory();
+// Reducers
+import stops from './../redux/modules/stops/stop-reducer.js'
+
+const reducer = combineReducers({
+  router: routerStateReducer,
+  stops
+})
+const logger = createLogger()
+const store = compose(
+  applyMiddleware(thunk, logger),
+  reduxReactRouter({ createHistory })
+)(createStore)(reducer)
 
 class App extends React.Component {
   render() {
@@ -39,18 +59,20 @@ class App extends React.Component {
 class AppRouter extends React.Component {
   render() {
     return (
-      <Router history={history}>
-        <Route path="/" component={App}>
-          <Route path="stop" component={StopList}>
-            <Route path=":stopid" component={Stop}/>
+      <Provider store={store}>
+        <ReduxRouter>
+          <Route path="/" component={App}>
+            <Route path="stop" component={StopList}>
+              <Route path=":stopid" component={Stop}/>
+            </Route>
+            <Route path="route" component={RouteList}>
+              <Route path=":routeid" component={SingleRoute}/>
+            </Route>
+            <Route path="styleguide" component={StyleGuide} />
+            <Route path="*" component={Instructions}/>
           </Route>
-          <Route path="route" component={RouteList}>
-            <Route path=":routeid" component={SingleRoute}/>
-          </Route>
-          <Route path="styleguide" component={StyleGuide} />
-          <Route path="*" component={Instructions}/>
-        </Route>
-      </Router>
+        </ReduxRouter>
+      </Provider>
     )
   }
 }
