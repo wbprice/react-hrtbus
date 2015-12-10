@@ -3,6 +3,7 @@ import Radium from 'radium'
 import RouteBadge from './RouteBadge'
 import TimeBadge from './TimeBadge'
 import Colors from '../../common/Colors'
+import moment from 'moment'
 
 let style = {
   base: {
@@ -33,19 +34,20 @@ class Bus extends React.Component {
   componentWillUnmount() {}
 
   render() {
+    
     return (
       <tr style={[
           style.base,
           alternateColor(this.props.index)
         ]}>
         <td style={style.cell}>
-          <RouteBadge background={Colors.blue.base} route={this.props.bus.route} />
+          <RouteBadge background={Colors.blue.base} route={this.props.bus.route_id} />
         </td>
         <td style={style.cell}>
           {this.props.bus.destination}
         </td>
         <td style={style.cell}>
-          <TimeBadge time={this.props.bus.time_to_arrival}/>
+          <TimeBadge time={this.props.bus.arrival_time['$date']}/>
         </td>
       </tr>
     )

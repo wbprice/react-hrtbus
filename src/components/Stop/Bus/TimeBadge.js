@@ -2,6 +2,7 @@ import React from 'react'
 import Radium from 'radium'
 import Badge from '../../common/Badge'
 import Colors from '../../common/Colors'
+import moment from 'moment'
 
 let style = {
 
@@ -45,6 +46,7 @@ let style = {
 
 function timeToArrival(minutes) {
 
+  debugger
   minutes = parseInt(minutes)
 
   if (minutes >= 15) {
@@ -65,6 +67,7 @@ function timeToArrival(minutes) {
 
 function pickTemplate(minutes) {
 
+  debugger
   minutes = parseInt(minutes)
 
   if (minutes === 0) {
@@ -110,10 +113,13 @@ TimeToArrival = Radium(TimeToArrival)
 class TimeBadge extends React.Component {
 
   render() {
-    let timingStyle = style[timeToArrival(this.props.time)];
+
+    const time = moment(moment().diff(moment(this.props.time))).format('m')
+    const timingStyle = style[timeToArrival(time)];
+
     return (
       <Badge background={timingStyle.background}>
-        {pickTemplate(this.props.time)}
+        {pickTemplate(time)}
       </Badge>
     )
   }

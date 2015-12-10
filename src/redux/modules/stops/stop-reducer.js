@@ -15,15 +15,15 @@ export default function stops(state = initialState, action) {
 
     case FETCH_STOPS_REQUEST:
       return Object.assign({}, state, {
-        isFetching: false,
-        stops: [
-          ...action.response.slice(0)
-        ]
+        isFetching: false
       })
 
     case FETCH_STOPS_SUCCESS:
       return Object.assign({}, state, {
-        isFetching: false
+        isFetching: false,
+        stops: [
+          ...action.response
+        ]
       })
 
     case FETCH_STOPS_FAILURE:
