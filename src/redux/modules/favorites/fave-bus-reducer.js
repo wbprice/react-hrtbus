@@ -38,5 +38,5 @@ export default function faveBuses(state = initialState, action) {
       return state
 
   }
-
+  
 }
