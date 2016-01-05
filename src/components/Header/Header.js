@@ -40,6 +40,9 @@ class Header extends React.Component {
             <li>
               <Link to="/route" activeStyle={style.activeLink}>Route</Link>
             </li>
+            <li>
+              <Link to="/favorites" activeStyle={style.activeLink}>Favorites</Link>
+            </li>
           </ul>
 
         </div>

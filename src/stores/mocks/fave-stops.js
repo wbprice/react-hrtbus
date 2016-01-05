@@ -43,6 +43,60 @@ export default [
     "buses": []
   },
   {
+    "stop_name": "CodeforVA 995 & Lorem",
+    "stop_id": "0995",
+    "stop_position": {
+      "lat": "-78.000",
+      "lon": "32"
+    },
+    "buses": []
+  },
+  {
+    "stop_name": "CodeforVA 996 & Lorem",
+    "stop_id": "0996",
+    "stop_position": {
+      "lat": "-78.000",
+      "lon": "32"
+    },
+    "buses": []
+  },
+  {
+    "stop_name": "CodeforVA 997 & Lorem",
+    "stop_id": "0997",
+    "stop_position": {
+      "lat": "-78.000",
+      "lon": "32"
+    },
+    "buses": []
+  },
+  {
+    "stop_name": "CodeforVA 998 & Lorem",
+    "stop_id": "0998",
+    "stop_position": {
+      "lat": "-78.000",
+      "lon": "32"
+    },
+    "buses": []
+  },
+  {
+    "stop_name": "CodeforVA 999 & Lorem",
+    "stop_id": "0999",
+    "stop_position": {
+      "lat": "-78.000",
+      "lon": "32"
+    },
+    "buses": []
+  },
+  {
+    "stop_name": "CodeforVA ooo & Lorem",
+    "stop_id": "1000",
+    "stop_position": {
+      "lat": "-78.000",
+      "lon": "32"
+    },
+    "buses": []
+  },
+  {
     "stop_name": "HAMPTON & SPOTSWOOD",
     "stop_id": "0281",
     "stop_position": {
