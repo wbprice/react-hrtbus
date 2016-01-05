@@ -54,28 +54,6 @@ class App extends React.Component {
         <section className="container">
           {this.props.children}
         </section>
-        <div>
-          <button onClick= {() => {
-            let busId = Math.floor(Math.random() * (200))
-            store.dispatch ({
-              type: 'FAVE_BUS',
-              busId: busId
-            });
-          }}>PUsh IT </button>
-          <br />          
-          <input ref={node => {
-            this.input = node;
-          }} />
-          <button onClick= {() => {
-            store.dispatch ({
-              type: 'UNFAVE_BUS',
-              busId: this.input.value
-            });
-            this.input.value = '';
-          }}>
-            Remove
-          </button>
-        </div>
       </article>
     )
   }
