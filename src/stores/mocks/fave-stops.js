@@ -49,7 +49,20 @@ export default [
       "lat": "-78.000",
       "lon": "32"
     },
-    "buses": []
+    "buses": [
+      {
+        "route": "2",
+        "destination": "Code for 995 & Code for other direction",
+        "scheduled_time_of_arrival": 144735380000,
+        "time_to_arrival": "29",
+        "bus_number": "0123",
+        "last_known_position": {
+          "lat": "-78.234",
+          "lon": "32.000",
+          "adherence": 2342
+        }
+      }
+    ]
   },
   {
     "stop_name": "CodeforVA 996 & Lorem",
@@ -58,7 +71,20 @@ export default [
       "lat": "-78.000",
       "lon": "32"
     },
-    "buses": []
+    "buses": [
+      {
+        "route": "2",
+        "destination": "996 & Coding (Naval Exchange)",
+        "scheduled_time_of_arrival": 1447353480807,
+        "time_to_arrival": "1",
+        "bus_number": "1249",
+        "last_known_position": {
+          "lat": "-78.234",
+          "lon": "32.000",
+          "adherence": 3000
+        }
+      }
+    ]
   },
   {
     "stop_name": "CodeforVA 997 & Lorem",
@@ -85,7 +111,20 @@ export default [
       "lat": "-78.000",
       "lon": "32"
     },
-    "buses": []
+    "buses": [
+      {
+        "route": "23",
+        "destination": "CodeforVA HWY STATION (CURLEW & )",
+        "scheduled_time_of_arrival": 1447353485807,
+        "time_to_arrival": "6",
+        "bus_number": "1713",
+        "last_known_position": {
+          "lat": "-78.234",
+          "lon": "32.000",
+          "adherence": 2342
+        }
+      }
+    ]
   },
   {
     "stop_name": "CodeforVA ooo & Lorem",

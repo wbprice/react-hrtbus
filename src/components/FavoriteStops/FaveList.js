@@ -7,7 +7,7 @@ import favestops from '../../stores/mocks/fave-stops'
 import {faveStop, localStops, removeLocalStops} from '../../redux/modules/favorites/fave-stop-actions'
 
 let nextTodoId = 0;
-let stopArray = ['0209', '0430', '0281']
+let stopArray = ['0209', '0430', '0281', '0995', '0996', '1000']
 
 
 class FaveList extends React.Component {
