@@ -1,4 +1,3 @@
-import fetch from 'isomorphic-fetch'
 import fetchJsonp from 'fetch-jsonp'
 import { API_URL_STOPS, checkStatus } from './../common'
 
@@ -29,8 +28,8 @@ export function fetchStopsSuccess(response) {
 
 export function fetchStops() {
 
-  const lat = 36.8411416
-  const lon = -76.13431090000002
+  const lat = 36.8468700
+  const lon = -76.2922870
 
   return function(dispatch) {
     dispatch(fetchStopsRequest())

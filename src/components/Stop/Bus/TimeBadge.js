@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component, PropTypes } from 'react'
 import Radium from 'radium'
 import Badge from '../../common/Badge'
 import Colors from '../../common/Colors'
@@ -46,8 +46,7 @@ let style = {
 
 function timeToArrival(minutes) {
 
-  debugger
-  minutes = parseInt(minutes)
+  minutes = Number(minutes)
 
   if (minutes >= 15) {
     return 'imminent15'
@@ -66,10 +65,6 @@ function timeToArrival(minutes) {
 }
 
 function pickTemplate(minutes) {
-
-  debugger
-  minutes = parseInt(minutes)
-
   if (minutes === 0) {
     return <TimeBadgeNow />
   } else if (minutes < 0) {
@@ -113,16 +108,28 @@ TimeToArrival = Radium(TimeToArrival)
 class TimeBadge extends React.Component {
 
   render() {
+    
+    let arrivalTime = moment(this.props.bus.arrival_time.$date)
 
-    const time = moment(moment().diff(moment(this.props.time))).format('m')
-    const timingStyle = style[timeToArrival(time)];
+    if (this.props.bus.busAdherence) {
+      arrivalTime = arrivalTime.subtract({minutes: this.props.bus.busAdherence})
+    }
+
+    let timeFromNow = moment().diff(arrivalTime)
+    timeFromNow = moment.duration(timeFromNow, 'm')._data.minutes
+
+    const timingStyle = style[timeToArrival(timeFromNow)];
 
     return (
       <Badge background={timingStyle.background}>
-        {pickTemplate(time)}
+        {pickTemplate(timeFromNow)}
       </Badge>
     )
   }
+}
+
+TimeBadge.propTypes = {
+  bus: PropTypes.object
 }
 
 export default Radium(TimeBadge)
