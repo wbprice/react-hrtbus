@@ -2,20 +2,17 @@ import React from 'react'
 import Radium from 'radium'
 import Stop from '../Stop/Stop'
 import { connect } from 'react-redux'
-import stops from '../../stores/mocks/stops'
 import favestops from '../../stores/mocks/fave-stops'
 import {faveStop, localStops, removeLocalStops} from '../../redux/modules/favorites/fave-stop-actions'
 
-let nextTodoId = 0;
-let stopArray = ['0209', '0430', '0281', '0995', '0996', '1000']
-
+let stopArray = ['0209', '0430', '0281', '0995', '0996', '1000'] //used for adding random stopIDs
 
 class FaveList extends React.Component {
 
   constructor() {
     super()
     this.state = {
-      stops: favestops
+      stops: favestops //mock fave stops
     }
   }
 
@@ -34,7 +31,11 @@ class FaveList extends React.Component {
           return <div>
             {faves.faveStops.map(function(faves) {
               if (faves == stop.stop_id) {
-                return <div><Stop key={stop.stop_id} stop={stop}/></div>
+                return <div><Stop key={stop.stop_id} 
+                                  stop={stop}
+                                  onFaveClick={() =>
+                                    dispatch(faveStop(stop.stop_id))
+                                  }/></div>
               }
             })}
           </div>

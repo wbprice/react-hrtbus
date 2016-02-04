@@ -18,26 +18,20 @@ export default function faveStops(state = initialState, action) {
           ...state.faveStops, action.routeId
         ]
       })
-
-      localStorage["hrtFaves"] = JSON.stringify(newFaves);
-
+      localStorage['hrtFaves'] = JSON.stringify(newFaves);
       return newFaves
 
     case POPU_STOPS:
       if (localStorage.hrtFaves) {
-        console.log("foundFaves")
-        console.log(localStorage.hrtFaves)
-        let oldFaves = JSON.parse(localStorage["hrtFaves"])
+        let oldFaves = JSON.parse(localStorage['hrtFaves'])
         return oldFaves
       }
 
     case REMOVE_LOCAL_STOP:
-      localStorage.removeItem("hrtFaves")
+      localStorage.removeItem('hrtFaves')
       return initialState
 
     default:
       return state
-
   }
-  
 }
