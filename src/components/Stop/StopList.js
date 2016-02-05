@@ -4,6 +4,9 @@ import Stop from './Stop'
 import {
   fetchStops
 } from './../../redux/modules/stops/stop-actions'
+import {
+  faveStop
+} from './../../redux/modules/favorites/fave-stop-actions'
 import { connect } from 'react-redux'
 
 class StopList extends React.Component {
@@ -16,11 +19,19 @@ class StopList extends React.Component {
     this.props.dispatch(fetchStops())
   }
 
+  toggleFaveStop(stopId) {
+    this.props.dispatch(faveStop(stopId))
+  }
+
   render() {
     return (
       <section>
         {this.props.data.stops.map(function(stop) {
-          return <Stop key={stop.stop_id} stop={stop}/>
+          return (
+            <Stop 
+              key={stop.stop_id} 
+              stop={stop} />
+            )
         })}
       </section>
     )

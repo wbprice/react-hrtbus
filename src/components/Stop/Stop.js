@@ -13,7 +13,6 @@ const style = {
     background: Colors.blue.dark,
     padding: '1em',
     display: 'flex',
-    flexDirection: 'column',
     alignItems: 'center',
     color: 'white'
   },
@@ -78,6 +77,31 @@ class NoBuses extends React.Component {
 
 StopKey = Radium(StopKey)
 
+const heartStyle = {
+  fontSize: '2em'
+}
+
+class SaveIcon extends React.Component {
+
+  onClick() {
+    debugger
+    this.props.toggleFaveStop()
+  }
+
+  render() {
+    return (
+      <div onClick={this.onClick.bind(this)}>
+        {this.props.favorited ? <span style={heartStyle}> &#9829;</span> : <span style={heartStyle}> &#9825;</span>}
+      </div>
+    )
+  }
+}
+
+SaveIcon.propTypes = {
+  favorited : React.PropTypes.object,
+  toggleFaveStop: React.PropTypes.func
+}
+
 class Stop extends React.Component {
 
   constructor() {
@@ -97,8 +121,13 @@ class Stop extends React.Component {
             style.header,
             this.props.stop.buses.length === 0 && style.inactive
           ]}>
-          <h3>{this.props.stop.stopName}</h3>
-          <span>{this.props.stop.stopId}</span>
+          <div style={{flex: '1'}}>
+            <h3>{this.props.stop.stopName}</h3>
+            <span>{this.props.stop.stopId}</span>
+          </div>
+          <div>
+            <SaveIcon toggleFaveStop={this.props.faveStop} favorited />
+          </div>
         </header>
 
         {(() => {
@@ -133,5 +162,11 @@ class Stop extends React.Component {
     )
   }
 };
+
+Stop.propTypes = {
+  toggleFaveStop : React.PropTypes.func
+}
+
+
 
 export default Radium(Stop)
