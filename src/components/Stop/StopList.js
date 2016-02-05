@@ -13,7 +13,7 @@ class StopList extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.dispatch(fetchStops())
+    this.props.dispatch(fetchStops())
   }
 
   render() {

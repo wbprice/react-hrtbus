@@ -54,11 +54,13 @@
   "dependencies": {
     "autoprefixer": "^6.1.0",
     "events": "^1.1.0",
+    "fetch-jsonp": "^1.0.0",
     "flexboxgrid": "^6.3.0",
     "flux": "^2.1.1",
     "history": "^1.13.1",
     "isomorphic-fetch": "^2.2.0",
     "lodash": "^3.10.1",
+    "moment": "^2.11.0",
     "normalize.css": "^3.0.3",
     "object-assign": "^4.0.1",
     "purecss": "^0.6.0",

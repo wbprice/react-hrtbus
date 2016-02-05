@@ -8,7 +8,7 @@ let style = {
   base: {
     fontSize: '14px',
     padding: '1rem',
-    borderBottom: '1px solid ' + Colors.beige.dark,
+    borderBottom: '1px solid ' + Colors.beige.dark
   },
 
   cell: {
@@ -33,19 +33,20 @@ class Bus extends React.Component {
   componentWillUnmount() {}
 
   render() {
+    
     return (
       <tr style={[
           style.base,
           alternateColor(this.props.index)
         ]}>
         <td style={style.cell}>
-          <RouteBadge background={Colors.blue.base} route={this.props.bus.route} />
+          <RouteBadge background={Colors.blue.base} route={this.props.bus.route_id} />
         </td>
         <td style={style.cell}>
           {this.props.bus.destination}
         </td>
         <td style={style.cell}>
-          <TimeBadge time={this.props.bus.time_to_arrival}/>
+          <TimeBadge bus={this.props.bus}/>
         </td>
       </tr>
     )
