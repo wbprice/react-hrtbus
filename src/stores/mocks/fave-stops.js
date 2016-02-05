@@ -1,13 +1,18 @@
 export default [
   {
-    "stop_name": "HAMPTON & PRINCESS ANNE",
-    "stop_id": "0209",
+    "stopName": "HAMPTON & PRINCESS ANNE",
+    "stopId": "0209",
     "stop_position": {
       "lat": "-78.000",
       "lon": "32"
     },
     "buses": [
       {
+        "route_id": 800,
+        "busId": 1606,
+        "arrival_time": {
+          "date": 1454680680000
+        },
         "route": "2",
         "destination": "HAMMOND & ADMIRAL TAUSSIG (Naval Exchange)",
         "scheduled_time_of_arrival": 1447353480807,
@@ -20,6 +25,11 @@ export default [
         }
       },
       {
+        "route_id": 800,
+        "busId": 1605,
+        "arrival_time": {
+          "date": 1454680680000
+        },
         "route": "2",
         "destination": "HAMMOND & ADMIRAL TAUSSIG (Naval Exchange)",
         "scheduled_time_of_arrival": 144735380000,
@@ -34,8 +44,8 @@ export default [
     ]
   },
   {
-    "stop_name": "COLLEY & GRAYDON",
-    "stop_id": "0430",
+    "stopName": "COLLEY & GRAYDON",
+    "stopId": "0430",
     "stop_position": {
       "lat": "-78.000",
       "lon": "32"
@@ -43,14 +53,19 @@ export default [
     "buses": []
   },
   {
-    "stop_name": "CodeforVA 995 & Lorem",
-    "stop_id": "0995",
+    "stopName": "CodeforVA 995 & Lorem",
+    "stopId": "0995",
     "stop_position": {
       "lat": "-78.000",
       "lon": "32"
     },
     "buses": [
       {
+        "route_id": 800,
+        "busId": 1608,
+        "arrival_time": {
+          "date": 1454680680000
+        },
         "route": "2",
         "destination": "Code for 995 & Code for other direction",
         "scheduled_time_of_arrival": 144735380000,
@@ -65,14 +80,19 @@ export default [
     ]
   },
   {
-    "stop_name": "CodeforVA 996 & Lorem",
-    "stop_id": "0996",
+    "stopName": "CodeforVA 996 & Lorem",
+    "stopId": "0996",
     "stop_position": {
       "lat": "-78.000",
       "lon": "32"
     },
     "buses": [
       {
+        "route_id": 800,
+        "busId": 1606,
+        "arrival_time": {
+          "date": 1454680680000
+        },
         "route": "2",
         "destination": "996 & Coding (Naval Exchange)",
         "scheduled_time_of_arrival": 1447353480807,
@@ -87,8 +107,8 @@ export default [
     ]
   },
   {
-    "stop_name": "CodeforVA 997 & Lorem",
-    "stop_id": "0997",
+    "stopName": "CodeforVA 997 & Lorem",
+    "stopId": "0997",
     "stop_position": {
       "lat": "-78.000",
       "lon": "32"
@@ -96,8 +116,8 @@ export default [
     "buses": []
   },
   {
-    "stop_name": "CodeforVA 998 & Lorem",
-    "stop_id": "0998",
+    "stopName": "CodeforVA 998 & Lorem",
+    "stopId": "0998",
     "stop_position": {
       "lat": "-78.000",
       "lon": "32"
@@ -105,14 +125,19 @@ export default [
     "buses": []
   },
   {
-    "stop_name": "CodeforVA 999 & Lorem",
-    "stop_id": "0999",
+    "stopName": "CodeforVA 999 & Lorem",
+    "stopId": "0999",
     "stop_position": {
       "lat": "-78.000",
       "lon": "32"
     },
     "buses": [
       {
+        "route_id": 800,
+        "busId": 1606,
+        "arrival_time": {
+          "date": 1454680680000
+        },
         "route": "23",
         "destination": "CodeforVA HWY STATION (CURLEW & )",
         "scheduled_time_of_arrival": 1447353485807,
@@ -127,8 +152,8 @@ export default [
     ]
   },
   {
-    "stop_name": "CodeforVA ooo & Lorem",
-    "stop_id": "1000",
+    "stopName": "CodeforVA ooo & Lorem",
+    "stopId": "1000",
     "stop_position": {
       "lat": "-78.000",
       "lon": "32"
@@ -136,14 +161,19 @@ export default [
     "buses": []
   },
   {
-    "stop_name": "HAMPTON & SPOTSWOOD",
-    "stop_id": "0281",
+    "stopName": "HAMPTON & SPOTSWOOD",
+    "stopId": "0281",
     "stop_position": {
       "lat": "-78.000",
       "lon": "32"
     },
     "buses": [
       {
+        "route_id": 800,
+        "busId": 1606,
+        "arrival_time": {
+          "date": 1454680680000
+        },
         "route": "23",
         "destination": "MILITARY HWY STATION (CURLEW & CORPORATE)",
         "scheduled_time_of_arrival": 1447353485807,
