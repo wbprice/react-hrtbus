@@ -23,25 +23,20 @@ class FaveList extends React.Component {
   render() {
 
     const { dispatch, faves } = this.props
+    debugger
 
     return (
       <div>
       <section>
-        {this.state.stops.map(function(stop) {
-          return <div>
-            {faves.faveStops.map(function(faves) {
-              if (faves == stop.stopId) {
+            {faves.faveStops.map(function(fave) {
                 return (
-                  <div onClick={() =>
-                      dispatch(removeFaveStop(stop.stopId))}>
-                          <Stop key={stop.stopId} 
-                          stop={stop}/>
+                  <div>
+                        {fave}
                   </div>
-                )
+                 )
               }
-            })}
-          </div>
-        })}
+            )}
+        
         <div>
           <button onClick= {() => {
             let busId = Math.floor(Math.random() * (stopArray.length))

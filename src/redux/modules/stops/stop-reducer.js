@@ -6,7 +6,8 @@ import {
 
 const initialState = {
   isFetching: false,
-  stops: []
+  stops: [],
+  faveStops: []
 }
 
 export default function stops(state = initialState, action) {

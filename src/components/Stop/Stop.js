@@ -2,6 +2,9 @@ import React from 'react'
 import Radium from 'radium'
 import Colors from '../common/Colors'
 import Bus from './Bus/Bus'
+import {
+  removeFaveStop
+} from './../../redux/modules/favorites/fave-stop-actions'
 
 const style = {
 
@@ -83,22 +86,31 @@ const heartStyle = {
 
 class SaveIcon extends React.Component {
 
-  onClick() {
-    debugger
+  componentDidMount() {
+
+  }
+
+  onClick(favorited) {
+    //if (favorited) this.props.dispatch(removeFaveStop(this.props.stopId))
     this.props.toggleFaveStop()
   }
 
   render() {
+    let favorited = false;
+
+    this.props.faves.faveStops.forEach(fave => {
+      if (fave == this.props.stopId) favorited = true;
+    })
+
     return (
-      <div onClick={this.onClick.bind(this)}>
-        {this.props.favorited ? <span style={heartStyle}> &#9829;</span> : <span style={heartStyle}> &#9825;</span>}
+      <div onClick={this.onClick.bind(this, favorited)}>
+        {favorited ? <span style={heartStyle}> &#9829;</span> : <span style={heartStyle}> &#9825;</span>}
       </div>
     )
   }
 }
 
 SaveIcon.propTypes = {
-  favorited : React.PropTypes.object,
   toggleFaveStop: React.PropTypes.func
 }
 
@@ -114,7 +126,9 @@ class Stop extends React.Component {
 
   render() {
 
+    //let favorited = 
     return (
+
       <section style={style.base}>
 
         <header style={[
@@ -126,7 +140,10 @@ class Stop extends React.Component {
             <span>{this.props.stop.stopId}</span>
           </div>
           <div>
-            <SaveIcon toggleFaveStop={this.props.faveStop} favorited />
+            <SaveIcon 
+              faves={this.props.faves}
+              toggleFaveStop={this.props.toggleFaveStop} 
+              stopId={this.props.stop.stopId} />
           </div>
         </header>
 

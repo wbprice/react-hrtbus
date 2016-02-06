@@ -5,7 +5,8 @@ import {
   fetchStops
 } from './../../redux/modules/stops/stop-actions'
 import {
-  faveStop
+  faveStop,
+  localStops
 } from './../../redux/modules/favorites/fave-stop-actions'
 import { connect } from 'react-redux'
 
@@ -15,7 +16,8 @@ class StopList extends React.Component {
     super()
   }
 
-  componentDidMount() {
+  componentDidMount() {    
+    this.props.dispatch(localStops());
     this.props.dispatch(fetchStops())
   }
 
@@ -24,13 +26,17 @@ class StopList extends React.Component {
   }
 
   render() {
+
+
     return (
       <section>
-        {this.props.data.stops.map(function(stop) {
+        {this.props.data.stops.map(stop => {
           return (
-            <Stop 
-              key={stop.stop_id} 
-              stop={stop} />
+            <div >
+              <Stop stop={stop} 
+                  faves={this.props.faves}
+                  toggleFaveStop={this.toggleFaveStop.bind(this, stop.stopId)} />
+            </div>
             )
         })}
       </section>
@@ -40,6 +46,7 @@ class StopList extends React.Component {
 
 export default connect(
   state => ({
-    data: state.stops
+    data: state.stops,
+    faves: state.faveStops
   })
 )(StopList)

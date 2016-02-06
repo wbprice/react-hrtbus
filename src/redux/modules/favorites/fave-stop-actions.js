@@ -5,10 +5,10 @@ export const REMOVE_FAVE_STOP = 'REMOVE_FAVE_STOP'
 
 //@app.route('/api/v2/stops/<stopId>')
 
-export function faveStop(stopId) {
+export function faveStop(routeId) {
 	return {
 		type: FAVE_STOP,
-		stopId: stopId
+		routeId: routeId
 	}
 }
 
@@ -24,9 +24,9 @@ export function removeLocalStops() {
 	}
 }
 
-export function removeFaveStop(stopId) {
+export function removeFaveStop(routeId) {
 	return {
 		type: REMOVE_FAVE_STOP,
-		stopId: stopId
+		routeId: routeId
 	}
 }
