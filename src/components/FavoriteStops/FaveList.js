@@ -8,7 +8,8 @@ import {
   localStops, 
   removeLocalStops,
   removeFaveStop,
-  fetchFaveStop
+  fetchFaveStop,
+  toggleFaveStop
 } from '../../redux/modules/favorites/fave-stop-actions'
 
 let stopArray = ['0209', '0430', '0281', '0995', '0996', '1000'] //used for adding random stopIDs
@@ -24,23 +25,30 @@ class FaveList extends React.Component {
     this.props.dispatch(fetchFaveStop(12));
   }
 
+  toggleFaveStop(stopId) {
+    this.props.dispatch(toggleFaveStop(stopId))
+  }
+
   render() {
 
-    const { dispatch, faves } = this.props
+
     debugger
 
     return (
       <div>
       <section>
-            {faves.faveStops.map(function(fave) {
-                return (
-                  <div>
-                        {fave}
-                  </div>
-                 )
-              }
-            )}
-        
+        <div>
+        {this.props.faves.faveStopApi.map(stop => {
+          return (
+            <div >
+              <Stop stop={stop} 
+                    faves= {this.props.faves}
+                    toggleFaveStop={this.toggleFaveStop.bind(this, stop.stopId)} />
+
+            </div>
+            )
+        })}
+        </div>
         <div>
           <button onClick= {() => {
             let busId = Math.floor(Math.random() * (stopArray.length))

@@ -48,7 +48,7 @@ export function toggleFaveStop(routeId) {
 
 export function fetchFaveStop(routeId) {
 
-	routeId = 8001
+	routeId = 8004
 	return function(dispatch) {
 		dispatch(fetchFaveRequest())
 		return fetchJsonp(`${API_URL_SINGLE}/${routeId}`)
