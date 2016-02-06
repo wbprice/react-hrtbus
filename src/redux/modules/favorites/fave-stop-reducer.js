@@ -36,7 +36,7 @@ export default function faveStops(state = initialState, action) {
                 ...state.faveStops.slice(removeCurIndex + 1)
               ]
             })
-            localStorage['hrtFaves'] = JSON.stringify(removeCurState);
+            localStorage['hrtFaves'] = JSON.stringify({faveStops: removeCurState.faveStops});
         }})
       }
       if (!removeCurState) {  
@@ -45,7 +45,7 @@ export default function faveStops(state = initialState, action) {
             ...state.faveStops, action.routeId
           ]
         })
-        localStorage['hrtFaves'] = JSON.stringify(removeCurState);
+        localStorage['hrtFaves'] = JSON.stringify({faveStops: removeCurState.faveStops});
       }
       return removeCurState
  
@@ -56,7 +56,7 @@ export default function faveStops(state = initialState, action) {
           ...state.faveStops, action.routeId
         ]
       })
-      localStorage['hrtFaves'] = JSON.stringify(newFaves);
+      localStorage['hrtFaves'] = JSON.stringify({faveStops: newFaves.faveStops});
       return newFaves
 
     case POPU_STOPS:
@@ -79,7 +79,7 @@ export default function faveStops(state = initialState, action) {
           ...state.faveStops.slice(removeIndex + 1)
         ]
       })
-      localStorage['hrtFaves'] = JSON.stringify(removeFaveState);
+      localStorage['hrtFaves'] = JSON.stringify({faveStops: removeFaveState.faveStops});
       return removeFaveState
 
     case REMOVE_LOCAL_STOP:
