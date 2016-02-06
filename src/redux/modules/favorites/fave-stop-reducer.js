@@ -3,14 +3,18 @@ import {
   POPU_STOPS,
   REMOVE_LOCAL_STOP,
   REMOVE_FAVE_STOP,
-  TOGGLE_STOP
+  TOGGLE_STOP,
+  FETCH_FAVE_REQUEST,
+  FETCH_FAVE_SUCCESS,
+  FETCH_FAVE_FAILURE
 } from './fave-stop-actions'
 
 
 //@app.route('/api/v2/stops/<stopId>')
 
 const initialState = {
-  faveStops: []
+  faveStops: [],
+  faveStopApi: []
 }
 
 export default function faveStops(state = initialState, action) {
@@ -81,6 +85,24 @@ export default function faveStops(state = initialState, action) {
     case REMOVE_LOCAL_STOP:
       localStorage.removeItem('hrtFaves')
       return initialState
+
+    case FETCH_FAVE_REQUEST:
+      return Object.assign({}, state, {
+        isFetching: false
+      })
+
+    case FETCH_FAVE_SUCCESS:
+      return Object.assign({}, state, {
+        isFetching: false,
+        faveStopApi: [
+          ...action.response
+        ]
+      })
+
+    case FETCH_FAVE_FAILURE:
+      return Object.assign({}, state, {
+        isFetching: false
+      })
 
     default:
       return state
