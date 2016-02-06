@@ -6,7 +6,8 @@ import {
 } from './../../redux/modules/stops/stop-actions'
 import {
   faveStop,
-  localStops
+  localStops,
+  toggleFaveStop
 } from './../../redux/modules/favorites/fave-stop-actions'
 import { connect } from 'react-redux'
 
@@ -22,7 +23,7 @@ class StopList extends React.Component {
   }
 
   toggleFaveStop(stopId) {
-    this.props.dispatch(faveStop(stopId))
+    this.props.dispatch(toggleFaveStop(stopId))
   }
 
   render() {

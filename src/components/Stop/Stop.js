@@ -184,6 +184,4 @@ Stop.propTypes = {
   toggleFaveStop : React.PropTypes.func
 }
 
-
-
 export default Radium(Stop)
