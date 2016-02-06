@@ -62,7 +62,13 @@ export default function faveStops(state = initialState, action) {
     case POPU_STOPS:
       if (localStorage.hrtFaves) {
         let oldFaves = JSON.parse(localStorage['hrtFaves'])
-        return oldFaves
+        let popuFaves = Object.assign({}, state, {
+          faveStops: [
+            oldFaves
+          ]
+        })
+
+        return popuFaves
       }
       return state
 
@@ -91,10 +97,6 @@ export default function faveStops(state = initialState, action) {
 
     case FETCH_FAVE_SUCCESS:
 
-    let stops = []
-
-    stops.push(action.response)
-
     let obj = {
       stopId : "123",
       buses : action.response
@@ -103,15 +105,12 @@ export default function faveStops(state = initialState, action) {
     let arr = []
     arr.push(obj)
 
-
-    debugger
-
-      return Object.assign({}, state, {
-        isFetching: false,
-        faveStopApi: [
-          ...arr
-        ]
-      })
+    return Object.assign({}, state, {
+      isFetching: false,
+      faveStopApi: [
+        ...arr
+      ]
+    })
 
     case FETCH_FAVE_FAILURE:
       return Object.assign({}, state, {
