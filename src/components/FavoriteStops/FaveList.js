@@ -1,3 +1,4 @@
+import 'babel-core/polyfill'
 import React from 'react'
 import Radium from 'radium'
 import Stop from '../Stop/Stop'
@@ -19,13 +20,10 @@ class FaveList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(localStops());
+    this.props.dispatch(localStops())
     this.props.faves.faveStops.forEach(stop => {
       this.props.dispatch(fetchFaveStop(stop))
     })
-    /*
-    this.props.dispatch(fetchFaveStop(8004));
-    this.props.dispatch(fetchFaveStop(2000));*/
   }
 
   toggleFaveStop(stopId) {
@@ -34,8 +32,7 @@ class FaveList extends React.Component {
 
   render() {
 
-
-    debugger
+    //debugger
 
     return (
       <div>
@@ -43,21 +40,23 @@ class FaveList extends React.Component {
         <div>
         {this.props.faves.faveStopApi.map(stop => {
           return (
-            <div >
-              <Stop stop={stop} 
-                    faves= {this.props.faves}
-                    toggleFaveStop={this.toggleFaveStop.bind(this, stop.stopId)} />
-
+            <div>
+              {this.props.faves.faveStops.map(fave => {
+                if (fave == stop.stopId) {
+                  return (
+                    <div>
+                      <Stop stop={stop} 
+                            faves= {this.props.faves}
+                            toggleFaveStop={this.toggleFaveStop.bind(this, stop.stopId)} />
+                    </div>
+                  )
+                }
+              })}
             </div>
-            )
+          )
         })}
         </div>
         <div>
-          <button onClick= {() => {
-            let busId = Math.floor(Math.random() * (stopArray.length))
-            dispatch(faveStop(stopArray[busId]));
-          }}> Add random stop
-          </button>
           <button onClick= {() => {
             dispatch(removeLocalStops());
           }}> Empty Local Storage

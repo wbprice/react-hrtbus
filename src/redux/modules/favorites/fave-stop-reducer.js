@@ -39,7 +39,7 @@ export default function faveStops(state = initialState, action) {
             localStorage['hrtFaves'] = JSON.stringify({faveStops: removeCurState.faveStops});
         }})
       }
-      if (!removeCurState) {  
+      if (!removeCurState) {
         removeCurState = Object.assign({}, state, {
           faveStops: [
             ...state.faveStops, action.routeId
@@ -105,8 +105,6 @@ export default function faveStops(state = initialState, action) {
 
     let arr = []
     arr.push(obj)
-
-    console.log(state);
 
     let updateFave;
 
