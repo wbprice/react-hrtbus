@@ -93,24 +93,46 @@ export default function faveStops(state = initialState, action) {
       return initialState
 
     case FETCH_FAVE_REQUEST:
-      return initialState
+      return state
 
     case FETCH_FAVE_SUCCESS:
 
     let obj = {
-      stopId : "123",
+      stopId : action.routeId,
       buses : action.response
     }
 
     let arr = []
     arr.push(obj)
 
-    return Object.assign({}, state, {
-      isFetching: false,
-      faveStopApi: [
-        ...arr
-      ]
+    console.log(state);
+
+    let updateFave;
+
+    state.faveStopApi.forEach((stop, index) => {
+      if (stop.stopId == action.routeId) {
+        updateFave = Object.assign({}, state, {
+          faveStopApi: [
+            ...state.faveStopApi.slice(0, index),
+            arr,
+            ...state.faveStopApi.slice(index + 1)
+          ]
+        })
+      }
     })
+
+    if (!updateFave) {
+      return Object.assign({}, state, {
+        isFetching: false,
+        faveStopApi: [
+          ...state.faveStopApi,
+          ...arr
+        ]
+      })
+    }
+
+    return state
+
 
     case FETCH_FAVE_FAILURE:
       return Object.assign({}, state, {

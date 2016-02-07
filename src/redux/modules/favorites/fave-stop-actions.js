@@ -48,12 +48,11 @@ export function toggleFaveStop(routeId) {
 
 export function fetchFaveStop(routeId) {
 
-	routeId = 8004
 	return function(dispatch) {
 		dispatch(fetchFaveRequest())
 		return fetchJsonp(`${API_URL_SINGLE}/${routeId}`)
 		.then(response => response.json())
-		.then(json => dispatch(fetchFaveSuccess(json)))
+		.then(json => dispatch(fetchFaveSuccess(json, routeId)))
 		.catch(error => {
 			dispatch(fetchFaveFailure(error))
 		})
@@ -74,9 +73,11 @@ export function fetchFaveFailure(error) {
   }
 }
 
-export function fetchFaveSuccess(response) {
+export function fetchFaveSuccess(response, routeId) {
   return {
     type: FETCH_FAVE_SUCCESS,
+    routeId: routeId,
     response
   }
 }
+

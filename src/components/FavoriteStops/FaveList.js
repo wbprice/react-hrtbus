@@ -12,8 +12,6 @@ import {
   toggleFaveStop
 } from '../../redux/modules/favorites/fave-stop-actions'
 
-let stopArray = ['0209', '0430', '0281', '0995', '0996', '1000'] //used for adding random stopIDs
-
 class FaveList extends React.Component {
 
   constructor() {
@@ -22,7 +20,8 @@ class FaveList extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(localStops());
-    this.props.dispatch(fetchFaveStop(12));
+    this.props.dispatch(fetchFaveStop(8004));
+    this.props.dispatch(fetchFaveStop(2000));
   }
 
   toggleFaveStop(stopId) {
