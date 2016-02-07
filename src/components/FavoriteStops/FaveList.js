@@ -20,8 +20,12 @@ class FaveList extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(localStops());
+    this.props.faves.faveStops.forEach(stop => {
+      this.props.dispatch(fetchFaveStop(stop))
+    })
+    /*
     this.props.dispatch(fetchFaveStop(8004));
-    this.props.dispatch(fetchFaveStop(2000));
+    this.props.dispatch(fetchFaveStop(2000));*/
   }
 
   toggleFaveStop(stopId) {

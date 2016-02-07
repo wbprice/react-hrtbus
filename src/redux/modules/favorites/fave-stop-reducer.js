@@ -25,8 +25,8 @@ export default function faveStops(state = initialState, action) {
       let removeCurState;
       if (localStorage.hrtFaves) {
         let curFaves = JSON.parse(localStorage['hrtFaves'])
-        let removeCurIndex;
-        //checks to see if stop is already in favestops
+        let removeCurIndex
+
         curFaves.faveStops.forEach((element, index) => {
           if (element == action.routeId) {
             removeCurIndex = index;
@@ -62,9 +62,10 @@ export default function faveStops(state = initialState, action) {
     case POPU_STOPS:
       if (localStorage.hrtFaves) {
         let oldFaves = JSON.parse(localStorage['hrtFaves'])
+        let twoFaves = oldFaves.faveStops
         let popuFaves = Object.assign({}, state, {
           faveStops: [
-            oldFaves
+            ...twoFaves
           ]
         })
 
