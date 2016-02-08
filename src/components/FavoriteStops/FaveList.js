@@ -26,9 +26,11 @@ class FaveList extends React.Component {
     this.props.dispatch(toggleFaveStop(stopId))
   }
 
-  render() {
+  checkFavorited(stopId) {
+    return this.props.faves.faveStops.indexOf(stopId) !== -1
+  }
 
-    //debugger
+  render() {
 
     return (
       <div>
@@ -38,12 +40,14 @@ class FaveList extends React.Component {
           return (
             <div>
               {this.props.faves.faveStops.map(fave => {
+                let isFavorited = this.checkFavorited(stop.stopId);
                 if (fave == stop.stopId) {
                   return (
                     <div>
                       <Stop stop={stop} 
                             faves= {this.props.faves}
-                            toggleFaveStop={this.toggleFaveStop.bind(this, stop.stopId)} />
+                            toggleFaveStop={this.toggleFaveStop.bind(this, stop.stopId)}
+                            isFavorited={isFavorited} />
                     </div>
                   )
                 }

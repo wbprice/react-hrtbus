@@ -20,20 +20,27 @@ class StopList extends React.Component {
     this.props.dispatch(fetchStops())
   }
 
+  // takes a stopId to add/remove stopId as a favorited stop
   toggleFaveStop(stopId) {
     this.props.dispatch(toggleFaveStop(stopId))
   }
 
-  render() {
+  checkFavorited(stopId) {
+    return this.props.faves.faveStops.indexOf(stopId) !== -1
+  }
 
+  render() {
     return (
       <section>
         {this.props.data.stops.map(stop => {
+          let isFavorited = this.checkFavorited(stop.stopId);
+
           return (
             <div >
               <Stop stop={stop} 
-                  faves={this.props.faves}
-                  toggleFaveStop={this.toggleFaveStop.bind(this, stop.stopId)} />
+                faves={this.props.faves}
+                toggleFaveStop={this.toggleFaveStop.bind(this, stop.stopId)}
+                isFavorited={isFavorited} />
             </div>
             )
         })}

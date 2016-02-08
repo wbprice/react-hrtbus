@@ -87,20 +87,14 @@ class SaveIcon extends React.Component {
 
   }
 
-  onClick(favorited) {
+  onClick() {
     this.props.toggleFaveStop()
   }
 
   render() {
-    let favorited = false;
-
-    this.props.faves.faveStops.forEach(fave => {
-      if (fave == this.props.stopId) favorited = true;
-    })
-
     return (
-      <div onClick={this.onClick.bind(this, favorited)}>
-        {favorited ? <span style={heartStyle}> &#9829;</span> : <span style={heartStyle}> &#9825;</span>}
+      <div onClick={this.onClick.bind(this)}>
+        {this.props.isFavorited ? <span style={heartStyle}> &#9829;</span> : <span style={heartStyle}> &#9825;</span>}
       </div>
     )
   }
@@ -139,7 +133,8 @@ class Stop extends React.Component {
             <SaveIcon 
               faves={this.props.faves}
               toggleFaveStop={this.props.toggleFaveStop} 
-              stopId={this.props.stop.stopId} />
+              stopId={this.props.stop.stopId} 
+              isFavorited={this.props.isFavorited} />
           </div>
         </header>
 
