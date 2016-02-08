@@ -5,10 +5,7 @@ import Stop from '../Stop/Stop'
 import { connect } from 'react-redux'
 import favestops from '../../stores/mocks/fave-stops'
 import {
-  faveStop, 
-  localStops, 
   removeLocalStops,
-  removeFaveStop,
   fetchFaveStop,
   toggleFaveStop
 } from '../../redux/modules/favorites/fave-stop-actions'
@@ -20,7 +17,6 @@ class FaveList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(localStops())
     this.props.faves.faveStops.forEach(stop => {
       this.props.dispatch(fetchFaveStop(stop))
     })

@@ -2,9 +2,6 @@ import React from 'react'
 import Radium from 'radium'
 import Colors from '../common/Colors'
 import Bus from './Bus/Bus'
-import {
-  removeFaveStop
-} from './../../redux/modules/favorites/fave-stop-actions'
 
 const style = {
 
@@ -91,7 +88,6 @@ class SaveIcon extends React.Component {
   }
 
   onClick(favorited) {
-    //if (favorited) this.props.dispatch(removeFaveStop(this.props.stopId))
     this.props.toggleFaveStop()
   }
 

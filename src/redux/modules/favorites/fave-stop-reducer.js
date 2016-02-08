@@ -1,9 +1,6 @@
 import {
-  FAVE_STOP,
-  POPU_STOPS,
   REMOVE_LOCAL_STOP,
-  REMOVE_FAVE_STOP,
-  TOGGLE_STOP,
+  TOGGLE_FAVE_STOP,
   FETCH_FAVE_REQUEST,
   FETCH_FAVE_SUCCESS,
   FETCH_FAVE_FAILURE
@@ -13,81 +10,56 @@ import {
 //@app.route('/api/v2/stops/<stopId>')
 
 const initialState = {
-  faveStops: [],
+  faveStops: getFaveStops(), //from localStorage
   faveStopApi: []
+}
+
+/*
+ * @name setFaveStops
+ * @param {array} faveStops
+ * @description
+ * Replaces the contents of localStorage['faveStops']
+ * with a new array.
+ */
+
+function setFaveStops(faveStops) {
+  localStorage['faveStops'] = faveStops
+}
+
+/*
+ * @name getFaveStops
+ * @description
+ * Returns an array of stop ids that are favorited.
+ */
+
+function getFaveStops() {
+  const faveStops = localStorage['faveStops']
+  return faveStops ? faveStops.split(',') : []
 }
 
 export default function faveStops(state = initialState, action) {
 
   switch (action.type) {
 
-    case TOGGLE_STOP:
-      let removeCurState;
-      if (localStorage.hrtFaves) {
-        let curFaves = JSON.parse(localStorage['hrtFaves'])
-        let removeCurIndex
-
-        curFaves.faveStops.forEach((element, index) => {
-          if (element == action.routeId) {
-            removeCurIndex = index;
-            removeCurState = Object.assign({}, state, {
-              faveStops: [
-                ...state.faveStops.slice(0, removeCurIndex),
-                ...state.faveStops.slice(removeCurIndex + 1)
-              ]
-            })
-            localStorage['hrtFaves'] = JSON.stringify({faveStops: removeCurState.faveStops});
-        }})
-      }
-      if (!removeCurState) {
-        removeCurState = Object.assign({}, state, {
-          faveStops: [
-            ...state.faveStops, action.routeId
-          ]
+    case TOGGLE_FAVE_STOP:
+      const index = state.faveStops.indexOf(action.stopId)
+      let newArray
+      if (index !== -1) {
+        newArray = [...state.faveStops].filter(stop => {
+          return stop !== action.stopId
         })
-        localStorage['hrtFaves'] = JSON.stringify({faveStops: removeCurState.faveStops});
       }
-      return removeCurState
- 
-
-    case FAVE_STOP:
-      let newFaves = Object.assign({}, state, {
-        faveStops: [
-          ...state.faveStops, action.routeId
+      else {
+        newArray = [
+          ...state.faveStops,
+          action.stopId
         ]
-      })
-      localStorage['hrtFaves'] = JSON.stringify({faveStops: newFaves.faveStops});
-      return newFaves
-
-    case POPU_STOPS:
-      if (localStorage.hrtFaves) {
-        let oldFaves = JSON.parse(localStorage['hrtFaves'])
-        let twoFaves = oldFaves.faveStops
-        let popuFaves = Object.assign({}, state, {
-          faveStops: [
-            ...twoFaves
-          ]
-        })
-
-        return popuFaves
       }
-      return state
 
-    case REMOVE_FAVE_STOP:
-      let hrtFaves = JSON.parse(localStorage['hrtFaves'])
-      let removeIndex;
-      hrtFaves.faveStops.forEach(function (element, index) {
-          if (element == action.routeId) removeIndex = index
-      })
-
-      let removeFaveState = Object.assign({}, state, {
-        faveStops: [
-          ...state.faveStops.slice(0, removeIndex),
-          ...state.faveStops.slice(removeIndex + 1)
-        ]
-      })
-      localStorage['hrtFaves'] = JSON.stringify({faveStops: removeFaveState.faveStops});
-      return removeFaveState
+      setFaveStops(newArray)
+    return Object.assign({}, state, {
+      faveStops: newArray
+    }) 
 
     case REMOVE_LOCAL_STOP:
       localStorage.removeItem('hrtFaves')
@@ -131,7 +103,6 @@ export default function faveStops(state = initialState, action) {
     }
 
     return state
-
 
     case FETCH_FAVE_FAILURE:
       return Object.assign({}, state, {
