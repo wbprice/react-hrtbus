@@ -154,7 +154,7 @@ class Stop extends React.Component {
                     this.props.stop.buses.map(function(bus, index) {
                       return (
                         <Bus
-                          key={bus.busId}
+                          key={index}
                           bus={bus}/>
                       )
                     })
