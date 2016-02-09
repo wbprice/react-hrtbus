@@ -26,7 +26,7 @@ class StopList extends React.Component {
   }
 
   checkFavorited(stopId) {
-    return this.props.faves.faveStops.indexOf(stopId) !== -1
+    return this.props.faves.faveStopIds.indexOf(stopId) !== -1
   }
 
   render() {

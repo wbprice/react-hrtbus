@@ -10,8 +10,8 @@ import {
 //@app.route('/api/v2/stops/<stopId>')
 
 const initialState = {
-  faveStops: getFaveStops(), //from localStorage
-  faveStopApi: []
+  faveStopIds: getFaveStops(), //from localStorage
+  faveStops: []
 }
 
 /*
@@ -22,8 +22,8 @@ const initialState = {
  * with a new array.
  */
 
-function setFaveStops(faveStops) {
-  localStorage['faveStops'] = faveStops
+function setFaveStops(faveStopIds) {
+  localStorage['faveStops'] = faveStopIds
 }
 
 /*
@@ -33,8 +33,8 @@ function setFaveStops(faveStops) {
  */
 
 function getFaveStops() {
-  const faveStops = localStorage['faveStops']
-  return faveStops ? faveStops.split(',') : []
+  const faveStopIds = localStorage['faveStops']
+  return faveStopIds ? faveStopIds.split(',') : []
 }
 
 export default function faveStops(state = initialState, action) {
@@ -42,34 +42,34 @@ export default function faveStops(state = initialState, action) {
   switch (action.type) {
 
     case TOGGLE_FAVE_STOP:
-      const index = state.faveStops.indexOf(action.stopId)
-      const indexOfFave = state.faveStopApi.map(function(e) {
+      const index = state.faveStopIds.indexOf(action.stopId)
+      const indexOfFave = state.faveStops.map(function(e) {
         return e.stopId
       }).indexOf(action.stopId)
       let newArray
       if (index !== -1) {
-        newArray = [...state.faveStops].filter(stop => {
+        newArray = [...state.faveStopIds].filter(stop => {
           return stop !== action.stopId
         })
       }
       else {
         newArray = [
-          ...state.faveStops,
+          ...state.faveStopIds,
           action.stopId
         ]
       }
 
-      let newFaveStopArr = state.faveStopApi
+      let newFaveStopArr = state.faveStops
       if (indexOfFave !== 1) {
-        newFaveStopArr = state.faveStopApi.filter(stop => {
+        newFaveStopArr = state.faveStops.filter(stop => {
           return stop.stopId !== action.stopId
         })
       } 
 
       setFaveStops(newArray)
       return Object.assign({}, state, {
-        faveStops: newArray,
-        faveStopApi: newFaveStopArr
+        faveStopIds: newArray,
+        faveStops: newFaveStopArr
       }) 
 
     case REMOVE_LOCAL_STOP:
@@ -86,20 +86,20 @@ export default function faveStops(state = initialState, action) {
         buses : action.response
       }
 
-      const faveIndex = state.faveStopApi.map( e => { return e.stopId; }).indexOf(action.routeId);
+      const faveIndex = state.faveStops.map( e => { return e.stopId; }).indexOf(action.routeId);
 
       if (faveIndex !== -1) { 
         return Object.assign({}, state, {
-          faveStopApi: [
-            ...state.faveStopApi.slice(0, faveIndex),
+          faveStops: [
+            ...state.faveStops.slice(0, faveIndex),
             res,
-            ...state.faveStopApi.slice(faveIndex + 1)
+            ...state.faveStops.slice(faveIndex + 1)
           ]
         })
       } else {
         return Object.assign({}, state, {
-          faveStopApi: [
-            ...state.faveStopApi,
+          faveStops: [
+            ...state.faveStops,
             ...[res]
           ]
         })

@@ -3,7 +3,6 @@ import React from 'react'
 import Radium from 'radium'
 import Stop from '../Stop/Stop'
 import { connect } from 'react-redux'
-import favestops from '../../stores/mocks/fave-stops'
 import {
   removeLocalStops,
   fetchFaveStop,
@@ -17,7 +16,7 @@ class FaveList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.faves.faveStops.forEach(stop => {
+    this.props.faves.faveStopIds.forEach(stop => {
       this.props.dispatch(fetchFaveStop(stop))
     })
   }
@@ -27,7 +26,7 @@ class FaveList extends React.Component {
   }
 
   checkFavorited(stopId) {
-    return this.props.faves.faveStops.indexOf(stopId) !== -1
+    return this.props.faves.faveStopIds.indexOf(stopId) !== -1
   }
 
   render() {
@@ -36,13 +35,13 @@ class FaveList extends React.Component {
       <div>
       <section>
         <div>
-        {this.props.faves.faveStopApi.map((stop, index) => {
+        {this.props.faves.faveStops.map((stop, index) => {
           return (
             <Stop stop={stop} 
               key={index}
               faves= {this.props.faves}
               toggleFaveStop={this.toggleFaveStop.bind(this, stop.stopId)}
-              isFavorited=true />
+              isFavorited={true} />
           )
         })}
         </div>
