@@ -23,14 +23,18 @@ import RouteList from './Route/RouteList'
 import SingleRoute from './Route/Route'
 import StyleGuide from './StyleGuide/StyleGuide'
 import Instructions from './Instructions/Instructions'
+import FaveList from './FavoriteStops/FaveList'
 
 // Reducers
 import stops from './../redux/modules/stops/stop-reducer.js'
+import faveStops from './../redux/modules/favorites/fave-stop-reducer.js'
 
 const reducer = combineReducers({
   router: routerStateReducer,
-  stops
+  stops,
+  faveStops
 })
+
 const logger = createLogger()
 const store = compose(
   applyMiddleware(thunk, logger),
@@ -69,6 +73,7 @@ class AppRouter extends React.Component {
               <Route path=":routeid" component={SingleRoute}/>
             </Route>
             <Route path="styleguide" component={StyleGuide} />
+            <Route path="favorites" component={FaveList}/>
             <Route path="*" component={Instructions}/>
           </Route>
         </ReduxRouter>

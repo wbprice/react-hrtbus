@@ -1,7 +1,7 @@
 export default [
   {
     "stop_name": "HAMPTON & PRINCESS ANNE",
-    "stop_id": "0209",
+    "stopId": "0209",
     "stop_position": {
       "lat": "-78.000",
       "lon": "32"

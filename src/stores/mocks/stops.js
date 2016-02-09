@@ -1,7 +1,7 @@
 export default [
   {
     "stop_name": "HAMPTON & PRINCESS ANNE",
-    "stop_id": "0209",
+    "stopId": "0209",
     "stop_position": {
       "lat": "-78.000",
       "lon": "32"
@@ -35,7 +35,7 @@ export default [
   },
   {
     "stop_name": "COLLEY & GRAYDON",
-    "stop_id": "0430",
+    "stopId": "0430",
     "stop_position": {
       "lat": "-78.000",
       "lon": "32"
@@ -44,7 +44,7 @@ export default [
   },
   {
     "stop_name": "HAMPTON & SPOTSWOOD",
-    "stop_id": "0281",
+    "stopId": "0281",
     "stop_position": {
       "lat": "-78.000",
       "lon": "32"
