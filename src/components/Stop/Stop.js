@@ -83,10 +83,6 @@ const heartStyle = {
 
 class SaveIcon extends React.Component {
 
-  componentDidMount() {
-
-  }
-
   onClick() {
     this.props.toggleFaveStop()
   }
@@ -109,10 +105,6 @@ class Stop extends React.Component {
   constructor() {
     super()
   }
-
-  componentDidMount() {}
-
-  componentWillUnmount() {}
 
   render() {
 

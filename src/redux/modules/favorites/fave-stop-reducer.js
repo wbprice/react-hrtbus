@@ -48,7 +48,7 @@ export default function faveStops(state = initialState, action) {
       }).indexOf(action.stopId)
       let newArray
       if (index !== -1) {
-        newArray = [...state.faveStopIds].filter(stop => {
+        newArray = state.faveStopIds.filter(stop => {
           return stop !== action.stopId
         })
       }
@@ -60,7 +60,7 @@ export default function faveStops(state = initialState, action) {
       }
 
       let newFaveStopArr = state.faveStops
-      if (indexOfFave !== 1) {
+      if (indexOfFave !== -1) {
         newFaveStopArr = state.faveStops.filter(stop => {
           return stop.stopId !== action.stopId
         })
@@ -75,9 +75,6 @@ export default function faveStops(state = initialState, action) {
     case REMOVE_LOCAL_STOP:
       localStorage.removeItem('hrtFaves')
       return initialState
-
-    case FETCH_FAVE_REQUEST:
-      return state
 
     case FETCH_FAVE_SUCCESS:
 
@@ -100,7 +97,7 @@ export default function faveStops(state = initialState, action) {
         return Object.assign({}, state, {
           faveStops: [
             ...state.faveStops,
-            ...[res]
+            res
           ]
         })
       }

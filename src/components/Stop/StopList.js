@@ -5,7 +5,6 @@ import {
   fetchStops
 } from './../../redux/modules/stops/stop-actions'
 import {
-  faveStop,
   toggleFaveStop
 } from './../../redux/modules/favorites/fave-stop-actions'
 import { connect } from 'react-redux'

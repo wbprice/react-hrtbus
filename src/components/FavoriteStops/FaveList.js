@@ -47,7 +47,7 @@ class FaveList extends React.Component {
         </div>
         <div>
           <button onClick= {() => {
-            dispatch(removeLocalStops());
+            this.props.dispatch(removeLocalStops());
           }}> Empty Local Storage
           </button>
         </div>
@@ -56,10 +56,6 @@ class FaveList extends React.Component {
     )
   }
 }
-
-/*FaveList.propTypes = {
-    dispatch: React.PropTypes.func.isRequired
-  }*/
 
 export default connect(
   state => ({
