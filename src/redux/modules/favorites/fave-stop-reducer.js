@@ -43,6 +43,9 @@ export default function faveStops(state = initialState, action) {
 
     case TOGGLE_FAVE_STOP:
       const index = state.faveStops.indexOf(action.stopId)
+      const indexOfFave = state.faveStopApi.map(function(e) {
+        return e.stopId
+      }).indexOf(action.stopId)
       let newArray
       if (index !== -1) {
         newArray = [...state.faveStops].filter(stop => {
@@ -56,10 +59,18 @@ export default function faveStops(state = initialState, action) {
         ]
       }
 
+      let newFaveStopArr = state.faveStopApi
+      if (indexOfFave !== 1) {
+        newFaveStopArr = state.faveStopApi.filter(stop => {
+          return stop.stopId !== action.stopId
+        })
+      } 
+
       setFaveStops(newArray)
-    return Object.assign({}, state, {
-      faveStops: newArray
-    }) 
+      return Object.assign({}, state, {
+        faveStops: newArray,
+        faveStopApi: newFaveStopArr
+      }) 
 
     case REMOVE_LOCAL_STOP:
       localStorage.removeItem('hrtFaves')

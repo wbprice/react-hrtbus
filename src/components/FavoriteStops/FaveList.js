@@ -38,22 +38,11 @@ class FaveList extends React.Component {
         <div>
         {this.props.faves.faveStopApi.map((stop, index) => {
           return (
-            <div>
-              {this.props.faves.faveStops.map(fave => {
-                let isFavorited = this.checkFavorited(stop.stopId);
-                if (fave == stop.stopId) {
-                  return (
-                    <div>
-                      <Stop stop={stop} 
-                        key={index}
-                        faves= {this.props.faves}
-                        toggleFaveStop={this.toggleFaveStop.bind(this, stop.stopId)}
-                        isFavorited={isFavorited} />
-                    </div>
-                  )
-                }
-              })}
-            </div>
+            <Stop stop={stop} 
+              key={index}
+              faves= {this.props.faves}
+              toggleFaveStop={this.toggleFaveStop.bind(this, stop.stopId)}
+              isFavorited=true />
           )
         })}
         </div>
