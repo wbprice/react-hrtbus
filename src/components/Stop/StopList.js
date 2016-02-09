@@ -32,16 +32,15 @@ class StopList extends React.Component {
   render() {
     return (
       <section>
-        {this.props.data.stops.map(stop => {
+        {this.props.data.stops.map((stop, index) => {
           let isFavorited = this.checkFavorited(stop.stopId);
 
           return (
-            <div >
-              <Stop stop={stop} 
-                faves={this.props.faves}
-                toggleFaveStop={this.toggleFaveStop.bind(this, stop.stopId)}
-                isFavorited={isFavorited} />
-            </div>
+            <Stop stop={stop}
+              key={index}
+              faves={this.props.faves}
+              toggleFaveStop={this.toggleFaveStop.bind(this, stop.stopId)}
+              isFavorited={isFavorited} />
             )
         })}
       </section>

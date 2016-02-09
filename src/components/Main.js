@@ -34,6 +34,7 @@ const reducer = combineReducers({
   stops,
   faveStops
 })
+
 const logger = createLogger()
 const store = compose(
   applyMiddleware(thunk, logger),
