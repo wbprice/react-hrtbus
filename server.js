@@ -4,10 +4,10 @@
  * Start up the Trails Application.
  */
 
-'use strict'
+'use strict';
 
-const TrailsApp = require('trails')
-const app = require('./')
-const server = new TrailsApp(app)
+const TrailsApp = require('trails');
+const app = require('./');
+const server = new TrailsApp(app);
 
-server.start().catch(err => server.stop(err))
+server.start().catch(err => server.stop(err));
