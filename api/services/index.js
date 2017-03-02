@@ -1,3 +1,4 @@
-'use strict'
+'use strict';
 
-exports.DefaultService = require('./DefaultService')
+exports.DefaultService = require('./DefaultService');
+exports.ScheduleService = require('./ScheduleService');

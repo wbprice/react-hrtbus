@@ -1,0 +1,21 @@
+@import 'palette';
+
+.app-header {
+    background: $primary-color;
+    display: flex;
+    align-items: center;
+    padding: .5em;
+    .app-header--img, .app-header--title {
+        margin: 0 .25em;
+    }
+
+    .app-header--img {
+
+    }
+
+    .app-header--title {
+        color: $primary-color-text;
+        font-size: 1.5em;
+    }
+
+}

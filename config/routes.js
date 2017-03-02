@@ -17,7 +17,7 @@ module.exports = [
   {
     method: 'GET',
     path: '/',
-    handler: 'ViewController.helloWorld'
+    handler: 'ViewController.splash'
   },
 
   /**
@@ -27,5 +27,12 @@ module.exports = [
     method: [ 'GET' ],
     path: '/api/v1/default/info',
     handler: 'DefaultController.info'
+  },
+
+  {
+    method: [ 'GET' ],
+    path: '/api/v1/stopId',
+    handler: 'ScheduleController.stopId'
   }
+
 ]

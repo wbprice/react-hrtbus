@@ -8,7 +8,10 @@ class Icon extends React.Component {
         source = this.props.source
 
     return (
-      <img src={this.props.source} width={width} height={height} />
+      <img className="app-header--image"
+           src={this.props.source}
+           width={width}
+           height={height} />
     );
   }
 }

@@ -1,3 +1,7 @@
 {
-  "extends": "trails/test"
+    "extends": "trails/test",
+    "rules": {
+        "indent": ["error", 4],
+        "semi": 2
+    }
 }

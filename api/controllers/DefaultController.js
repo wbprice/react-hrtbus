@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-const Controller = require('trails/controller')
+const Controller = require('trails/controller');
 
 /**
  * @module DefaultController
@@ -11,10 +11,11 @@ const Controller = require('trails/controller')
  */
 module.exports = class DefaultController extends Controller {
 
-  /**
-   * Return some info about this application
-   */
-  info (request, reply) {
-    reply(this.app.services.DefaultService.getApplicationInfo())
-  }
+    /**
+     * Return some info about this application
+     */
+    info(request, reply) {
+        reply(this.app.services.DefaultService.getApplicationInfo());
+    }
+
 }
