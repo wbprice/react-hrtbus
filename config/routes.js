@@ -12,7 +12,7 @@
 module.exports = [
 
   /**
-   * Render the HelloWorld view
+   * Render the Splash view
    */
   {
     method: 'GET',
@@ -20,6 +20,23 @@ module.exports = [
     handler: 'ViewController.splash'
   },
 
+  /**
+   * Render the StopList view
+   */
+  {
+    method: 'GET',
+    path: '/stops',
+    handler: 'ViewController.stopList'
+  },
+
+  /**
+   * Render the StopDetails view
+   */
+  {
+    method: 'GET',
+    path: '/stops/{stopId}',
+    handler: 'ViewController.stopDetails'
+  },
   /**
    * Constrain the DefaultController.info handler to accept only GET requests.
    */

@@ -36,7 +36,7 @@ module.exports = {
         .pipe(gulp.dest('dist/css'))
     },
     watch() {
-      return gulp.watch('./client/**/*.*', ['compileTemplate', 'compileImages', 'compileStyles'])
+      return gulp.watch(['./client/**/*.*','./api/**/*.*'], ['compileTemplate', 'compileImages', 'compileStyles'])
     }
   }
 
