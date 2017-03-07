@@ -14,8 +14,13 @@ module.exports = class ViewController extends Controller {
 
     stopDetails(request, reply) {
         let stopId = request.params.stopId;
-        console.log(`Stop ${stopId} details.`);
-        reply(`Details for stop ${stopId}.`);
+
+        this.app.services.ScheduleService.stopId(stopId, function(err, payload) {
+            if (err) {
+                reply(err);
+            }
+            reply(payload);
+        });
     }
 
 };
