@@ -1,14 +1,13 @@
 import React from 'react'
-import Radium from 'radium'
 import Stop from './Stop'
-import {
+/*import {
   fetchStops
 } from './../../redux/modules/stops/stop-actions'
 import {
   toggleFaveStop
 } from './../../redux/modules/favorites/fave-stop-actions'
 import { connect } from 'react-redux'
-
+*/
 class StopList extends React.Component {
 
   constructor() {
@@ -16,16 +15,16 @@ class StopList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(fetchStops())
+    //this.props.dispatch(fetchStops())
   }
 
   // takes a stopId to add/remove stopId as a favorited stop
   toggleFaveStop(stopId) {
-    this.props.dispatch(toggleFaveStop(stopId))
+    //this.props.dispatch(toggleFaveStop(stopId))
   }
 
   checkFavorited(stopId) {
-    return this.props.faves.faveStopIds.indexOf(stopId) !== -1
+    //return this.props.faves.faveStopIds.indexOf(stopId) !== -1
   }
 
   render() {
@@ -53,3 +52,4 @@ export default connect(
     faves: state.faveStops
   })
 )(StopList)
+

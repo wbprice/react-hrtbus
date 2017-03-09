@@ -13,8 +13,8 @@ class Splash extends Component {
                 <Icon source="/dist/images/logo-white.png" height="144" width="144"/>
                 <StopFinder />
             </article>
+
         )
     }
 }
-
 module.exports = Splash;
