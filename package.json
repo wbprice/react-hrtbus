@@ -23,6 +23,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "^3.1.0",
     "gulp-util": "^3.0.8",
+    "gulp-webpack": "^1.5.0",
     "hapi-react-views": "^9.2.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

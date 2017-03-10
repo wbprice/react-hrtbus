@@ -5,6 +5,8 @@ const babel = require('gulp-babel')
 const gutil = require('gulp-util')
 const plumber = require('gulp-plumber')
 const sass = require('gulp-sass');
+const webpack = require('gulp-webpack');
+
 
 function onError(error) {
   gutil.log(error.message)
@@ -16,7 +18,12 @@ module.exports = {
   defaultTaskName: 'default',
 
   tasks: {
-    default: ['compileImages', 'compileTemplate', 'compileStyles', 'watch'],
+    default: ['compileJS', 'compileImages', 'compileTemplate', 'compileStyles', 'watch'],
+    compileJS() {
+      return gulp.src('./client/js/layout.js')
+        .pipe(webpack())
+        .pipe(gulp.dest('./dist/client.js'));
+    },
     compileTemplate() {
       return gulp.src('./client/js/components/**/*.js')
         .pipe(plumber({ errorHandler: onError }))
