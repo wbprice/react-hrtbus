@@ -13,10 +13,10 @@ function onError(error) {
 
 module.exports = {
 
-  defaultTaskName: 'watch',
+  defaultTaskName: 'default',
 
   tasks: {
-    default: ['compileImages', 'compileTemplate'],
+    default: ['compileImages', 'compileTemplate', 'compileStyles', 'watch'],
     compileTemplate() {
       return gulp.src('./client/js/components/**/*.js')
         .pipe(plumber({ errorHandler: onError }))
@@ -36,7 +36,7 @@ module.exports = {
         .pipe(gulp.dest('dist/css'))
     },
     watch() {
-      return gulp.watch(['./client/**/*.*','./api/**/*.*'], ['compileTemplate', 'compileImages', 'compileStyles'])
+      return gulp.watch(['./client/**/*.*', './api/**/*.*'], ['compileTemplate', 'compileImages', 'compileStyles'])
     }
   }
 
