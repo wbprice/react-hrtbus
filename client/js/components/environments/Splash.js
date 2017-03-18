@@ -12,8 +12,12 @@ class Splash extends Component {
         return (
             <article className="splash-page">
                 <Header />
-                <Icon source="/dist/images/logo-blue.svg" height="144" width="144"/>
-                <StopFinder />
+                <section className="pure-g">
+                    <div className="pure-u-1-1">
+                        <Icon source="/dist/images/logo-blue.svg" height="144" width="144"/>
+                        <StopFinder />
+                    </div>
+                </section>
             </article>
 
         )
