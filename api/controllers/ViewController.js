@@ -5,7 +5,7 @@ const Controller = require('trails/controller');
 module.exports = class ViewController extends Controller {
 
     splash(request, reply) {
-        reply.view('environments/Splash');
+        reply.view('components/environments/Splash');
     }
 
 };
