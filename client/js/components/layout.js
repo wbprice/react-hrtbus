@@ -15,7 +15,7 @@ const Component = React.createClass({
           <title>HRT Bus Finder</title>
           <meta charSet="utf-8"></meta>
           <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" />
+          <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous" />
           <link rel="stylesheet" href="/dist/css/style.css" />
           <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" />
         </head>

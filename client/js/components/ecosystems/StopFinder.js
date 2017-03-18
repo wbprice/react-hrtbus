@@ -22,12 +22,12 @@ class StopFinder extends Component {
                     <h3>By Street Intersection</h3>
                 <form method="GET" action="/api/v1/intersections">
                 <fieldset>
-                    <label htmlFor="intersection1">Street #1:</label>
-                    <input id="intersection1" name="intersection1" placeholder="StreetName1" />
+                    <label htmlFor="intersection1">First Street: </label>
+                    <input id="intersection1" name="intersection1" placeholder="First Street" />
                 </fieldset>
                 <fieldset>    
-                    <label htmlFor="intersection2">Street #2</label>
-                    <input id="intersection2" name="intersection2" placeholder="StreetName2" />
+                    <label htmlFor="intersection2">Second Street: </label>
+                    <input id="intersection2" name="intersection2" placeholder="Second Street" />
                 </fieldset>
                 <button class="loadMore">Search</button>    
                 </form>
