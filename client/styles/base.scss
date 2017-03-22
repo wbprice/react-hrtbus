@@ -1,12 +1,18 @@
 @import 'palette';
 
-body {
-    font-family: "Roboto", "Helvetica", "sans-serif";
+body, label, button {
+    font-family: "Helvetica", "sans-serif";
     font-weight: 300;
-    background: $primary-color;
+    background: url(../images/background.png);
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: "Roboto", "Helvetica", "sans-serif";
+    font-family: "Arvo", "Helvetica", "sans-serif";
     font-weight: 500;
+}
+
+#StopFinder {
+    fieldset {
+        border: 0 none;
+    }
 }

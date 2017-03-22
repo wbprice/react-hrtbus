@@ -29,6 +29,9 @@ module.exports = {
 
   onPluginsLoaded: function (err) {
     // Note that `this` is Trails `app` instance
+
+    console.log(__dirname);
+
     this.packs.hapi.server.views({
       engines: {
         js: require('hapi-react-views')
@@ -37,7 +40,7 @@ module.exports = {
       path: 'dist',
       compileOptions: {
         renderMethod: 'renderToString',
-        layoutPath: path.join(__dirname, '..', 'dist'),
+        layoutPath: path.join(__dirname, '..', 'dist', 'components'),
         layout: 'layout'
       }
     })
