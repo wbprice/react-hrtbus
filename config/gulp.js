@@ -47,7 +47,7 @@ module.exports = {
     },
     watch() {
 
-      return gulp.watch(['./client/**/*.*','./api/**/*.*'], ['compileTemplate', 'compileImages', 'compileStyles'])
+      return gulp.watch(['./client/**/*.*','./api/**/*.*'], ['compileJavaScript', 'compileImages', 'compileStyles'])
     }
   }
 

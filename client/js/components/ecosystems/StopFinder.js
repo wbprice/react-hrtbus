@@ -2,7 +2,6 @@
 
 const React = require('react');
 const Component = React.Component;
-// const palette = require('./../../palette');
 
 class StopFinder extends Component {
     render() {
@@ -15,7 +14,7 @@ class StopFinder extends Component {
                 <form method="GET" action="/api/v1/stopId">
                     <label htmlFor="stopId">Stop Number:</label>
                     <input id="stopId" name="stopId" type="number" />
-                    <button class="loadMore">Search</button>
+                    <button className="loadMore">Search</button>
                 </form>
                 </div>
                 <div>
