@@ -16,27 +16,38 @@ module.exports = {
   defaultTaskName: 'watch',
 
   tasks: {
-    default: ['compileImages', 'compileTemplate'],
-    compileTemplate() {
-      return gulp.src('./client/js/components/**/*.js')
+    default: ['compileImages', 'compileJavaScript'],
+    compileJavaScript() {
+      return gulp.src('./client/js/**/*.js')
         .pipe(plumber({ errorHandler: onError }))
         .pipe(babel({
           presets: ['react', 'es2015']
         }))
         .pipe(gulp.dest('dist'))
+        .on("finish", function(){
+          console.log("Finished Compiling JavaScript!")
+        })
     },
     compileImages() {
       return gulp.src('./client/images/**/*')
-        .pipe(gulp.dest('dist/images'))
+                 .pipe(plumber({ errorHandler: onError }))
+                 .pipe(gulp.dest('dist/images'))
+                 .on("finish", function(){
+                   console.log("Finished Compiling Images!")
+                 })
     },
     compileStyles() {
-      return gulp.src('./client/styles/**/*')
+      return gulp.src('./client/styles/**/*.scss')
         .pipe(plumber({ errorHandler: onError }))
         .pipe(sass())
         .pipe(gulp.dest('dist/css'))
+        .on("finish", function(){
+          console.log("Finished Compiling Styles!")
+        })
     },
     watch() {
-      return gulp.watch(['./client/**/*.*','./api/**/*.*'], ['compileTemplate', 'compileImages', 'compileStyles'])
+
+      return gulp.watch(['./client/**/*.*','./api/**/*.*'], ['compileJavaScript', 'compileImages', 'compileStyles'])
     }
   }
 
