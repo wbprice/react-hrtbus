@@ -31,7 +31,7 @@
     "trailpack-hapi": "^2.2.0",
     "trailpack-repl": "v2-latest",
     "trailpack-router": "v2-latest",
-    "trailpack-sequelize": "^2.0.0",
+    "trailpack-sequelize": "^3.0.0",
     "trails": "v2-latest",
     "winston": "^2.3",
     "wreck": "^10.0.0"
