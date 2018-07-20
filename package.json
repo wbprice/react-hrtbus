@@ -28,7 +28,7 @@
     "react-dom": "^15.4.2",
     "trailpack-footprints": "^2.0.0",
     "trailpack-gulp": "^1.0.2",
-    "trailpack-hapi": "^2.2.0",
+    "trailpack-hapi": "^3.1.1",
     "trailpack-repl": "v2-latest",
     "trailpack-router": "v2-latest",
     "trailpack-sequelize": "^2.0.0",
