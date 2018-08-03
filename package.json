@@ -25,7 +25,7 @@
     "gulp-util": "^3.0.8",
     "hapi-react-views": "^9.2.1",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react-dom": "^16.0.1",
     "trailpack-footprints": "^2.0.0",
     "trailpack-gulp": "^1.0.2",
     "trailpack-hapi": "^2.2.0",
