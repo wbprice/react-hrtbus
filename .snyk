@@ -1,0 +1,108 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-450202:
+    - gulp-babel > babel-core > babel-generator > babel-types > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-sequelize > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-gulp > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-footprints > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-sequelize > trailpack-datastore > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-sequelize > snyk > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-sequelize > sequelize > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-gulp > trailpack > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-sass > node-sass > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-sequelize > snyk > @snyk/dep-graph > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-sequelize > trailpack-datastore > trailpack > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-template > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-types > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-sequelize > snyk > snyk-nuget-plugin > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-generator > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-sequelize > snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-sequelize > snyk > snyk-mvn-plugin > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-sequelize > snyk > snyk-config > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-sass > node-sass > sass-graph > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-register > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-traverse > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-sequelize > snyk > inquirer > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-sequelize > snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-helpers > babel-template > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-hapi > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-register > babel-core > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-sequelize > snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-traverse > babel-types > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-sass > node-sass > gaze > globule > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-template > babel-traverse > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-sequelize > snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - trailpack-sequelize > snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-template > babel-types > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-generator > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-template > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-helpers > babel-template > babel-traverse > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-helpers > babel-template > babel-types > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-types > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-traverse > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-generator > babel-types > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-helpers > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-template > babel-traverse > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-traverse > babel-types > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-template > babel-types > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-helpers > babel-template > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-helpers > babel-template > babel-traverse > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-helpers > babel-template > babel-types > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-helpers > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2019-07-03T21:28:32.783Z'
