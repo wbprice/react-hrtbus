@@ -1,0 +1,86 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - trailpack-footprints > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - trailpack-gulp > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - trailpack-hapi > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - trailpack-sequelize > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-sass > node-sass > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - trailpack-gulp > trailpack > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - trailpack-sequelize > sequelize > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - trailpack-sequelize > trailpack-datastore > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-types > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-generator > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-traverse > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-template > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-register > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-sass > node-sass > sass-graph > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - trailpack-sequelize > trailpack-datastore > trailpack > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-generator > babel-types > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-traverse > babel-types > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-template > babel-types > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-template > babel-traverse > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-helpers > babel-template > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-register > babel-core > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-sass > node-sass > gaze > globule > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-helpers > babel-template > babel-types > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-types > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-generator > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-helpers > babel-template > babel-traverse > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-traverse > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-template > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-generator > babel-types > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-helpers > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-traverse > babel-types > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-template > babel-types > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-template > babel-traverse > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-helpers > babel-template > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-helpers > babel-template > babel-types > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-helpers > babel-template > babel-traverse > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
+    - gulp-babel > babel-core > babel-register > babel-core > babel-helpers > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-04-30T21:28:58.222Z'
