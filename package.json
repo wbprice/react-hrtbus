@@ -32,7 +32,7 @@
     "trailpack-repl": "v2-latest",
     "trailpack-router": "v2-latest",
     "trailpack-sequelize": "^2.0.0",
-    "trails": "v2-latest",
+    "trails": "3.0.0",
     "winston": "^2.3",
     "wreck": "^10.0.0"
   },
