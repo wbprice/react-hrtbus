@@ -21,7 +21,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-plumber": "^1.1.0",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^5.0.0",
     "gulp-util": "^3.0.8",
     "hapi-react-views": "^9.2.1",
     "react": "^15.4.2",
